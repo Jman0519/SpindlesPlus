@@ -1,7 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 
-let jobs = JSON.parse(fs.readFileSync("jobs.json"));
+let jobs = JSON.parse(fs.readFileSync("./backend/jobs.json"));
 
 server = http.createServer();
 server.listen(80);
@@ -30,9 +30,9 @@ server.on('request', async (req, res) => {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(fs.readFileSync('frontend/index.html'));
     }
-    else if (url == "/newjob.html") {
+    else if (url == "/CreateNewJob.html") {
         res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(fs.readFileSync('frontend/newjob.html'));
+        res.end(fs.readFileSync('frontend/CreateNewJob.html'));
     }
     else if (url == "/favicon.ico") {
         res.writeHead(200, { 'Content-Type': 'image/x-icon' });
