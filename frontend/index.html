@@ -104,24 +104,16 @@
     </script>
 
     <script>
-        async function getData() {
-            let jobs = Object.values(await (await fetch("/getJobs")).json());
+        function createTable(jobs) {
             let table = document.getElementById('data-table');
-
-            // TODO: check if the data is any different
-            let headers = [];
-
+            let headers = ["Received Date", "Container", "Customer Name", "Unit", "Tear Down", "Quoted Date", "Approval Date", "Clean", "Grind", "Grind Info", "Motor", "Motor Info", "Parts", "Parts List", "Build", "Test", "Est Sip", "Ready To Ship"];
             //create rows
             let rows = [];
             for (let i = 0; i < jobs.length; i++) {
                 let row = document.createElement('tr');
-                for (let key in jobs[i]) {
-                    if (key == "uuid") {
-                        continue;
-                    }
-                    headers[key] = true;
+                for (let header of headers) {
                     let cell = document.createElement('td');
-                    cell.textContent = jobs[i][key];
+                    cell.textContent = jobs[i][header];
                     row.appendChild(cell);
                 }
                 row.onclick = function () {
@@ -132,9 +124,9 @@
 
             //create headers
             let headerRow = document.createElement('tr');
-            for (let key in headers) {
+            for (let headerName of headers) {
                 let header = document.createElement('th');
-                header.textContent = key;
+                header.textContent = headerName;
                 headerRow.appendChild(header);
             }
 
@@ -144,7 +136,13 @@
             for (let i = 0; i < rows.length; i++) {
                 table.appendChild(rows[i]);
             }
+        }
 
+        async function getData() {
+            let jobs = Object.values(await (await fetch("/getJobs")).json());
+
+            // TODO: check if the data is any different
+            createTable(jobs);
         }
         setInterval(function () {
             // Call a function repetatively with 2 Second interval

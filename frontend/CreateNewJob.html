@@ -86,16 +86,16 @@
                     let motorRequirements = document.getElementById("motorRequirements").value;
 
                     let newJob = {
-                        "customerName": customerName,
-                        "receievedDate": receievedDate,
-                        "unit": unit,
-                        "tearDown": tearDown,
-                        "quotedDate": quotedDate,
-                        "approvalDate": approvalDate,
-                        "cleaning": cleaning,
-                        "grind": grind,
-                        "grindInfo": grindInfo,
-                        "motorRequirements": motorRequirements
+                        "Customer Name": customerName,
+                        "Receieved Date": receievedDate,
+                        "Unit": unit,
+                        "Tear Down": tearDown,
+                        "Quoted Date": quotedDate,
+                        "Approval Date": approvalDate,
+                        "Cleaning": cleaning,
+                        "Grind": grind,
+                        "Grind Info": grindInfo,
+                        "Motor Requirements": motorRequirements
                     };
                     console.log(newJob);
                     fetch("/addJob", {
