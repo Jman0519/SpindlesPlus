@@ -16,57 +16,67 @@
         <section class="cta">
 
             <input type="text" id="customerName" placeholder="Customer Name" required>
-            <br>
+            <br><br>
 
             <input type="date" id="receievedDate" placeholder="Receieved Date" required>
-            <br>
+            <br><br>
 
             <input type="text" id="unit" placeholder="Unit" required>
-            <br>
+            <br><br>
 
             <input type="checkbox" id="tearDown" placeholder="Tear Down Required?" required>
-            <br>
+            <br><br>
 
             <input type="date" id="quotedDate" placeholder="Customer Quoted Date" required>
-            <br>
+            <br><br>
 
             <input type="date" id="approvalDate" placeholder="Customer Approval Date" required>
-            <br>
+            <br><br>
 
             <input type="checkbox" id="cleaning" placeholder="Cleaning Complete?" required>
-            <br>
+            <br><br>
 
             <input type="checkbox" id="grind" placeholder="Grind Required?" required>
-            <br>
+            <br><br>
 
             <input type="text" id="grindInfo" placeholder="Grind Info" required>
-            <br>
+            <br><br>
 
-            <select id="motorRequirements" placeholder="Motor Requirments" required>
+            <select id="motorRequirement" placeholder="Motor Requirments" required>
                 <option value="CB">Clean / Bake</option>
                 <option value="RE">Rewind / Epoxy</option>
             </select>
-            <br>
+            <br><br>
 
-            <input type="text" id="cleaning" placeholder="Cleaning Complete?" required>
-            <br>
+            <input type="text" id="motorInfo" placeholder="Motor Info" required>
+            <br><br>
 
-            <input type="checkbox" id="cleaning" placeholder="Cleaning Complete?" required>
-            <br>
+            <select id="partsRequired" placeholder="Parts Required?" required>
+                <option value="SPI">Spindles Plus Parts</option>
+                <option value="Customer">Customer Supplied Parts</option>
+                <option value="Other">Other</option>
+            </select>
+            <br><br>
 
-            <input type="checkbox" id="cleaning" placeholder="Cleaning Complete?" required>
-            <br>
+            <input type="text" id="partsList" placeholder="Parts List?" required>
+            <br><br>
 
-            <input type="checkbox" id="cleaning" placeholder="Cleaning Complete?" required>
-            <br>
+            <input type="text" id="partBuild" placeholder="Build Info" required>
+            <br><br>
 
-            <input type="checkbox" id="cleaning" placeholder="Cleaning Complete?" required>
-            <br>
+            <input type="text" id="partTest" placeholder="Test Info" required>
+            <br><br>
+
+            <input type="date" id="estimatedShipDate" placeholder="Estimated Shipping Date?" required>
+            <br><br>
+
+            <input type="checkbox" id="readyToShip" placeholder="Ready to Ship?" required>
+            <br><br><br><br>
 
 
 
 
-            <button id="editjob" type="submit">Edit Job</button>
+            <button id="submitNewJob" type="submit">Submit New Job</button>
 
 
 
@@ -107,14 +117,6 @@
                     });
                 }
             </script>
-        </section>
-        <section class="instructions">
-            <h2>Directions Maybe??</h2>
-            <ul>
-                <li>Use arrow keys to control your snake.</li>
-                <li>Eat food to grow and avoid collisions with other snakes.</li>
-                <li>Survive and become the longest snake to win!</li>
-            </ul>
         </section>
     </main>
     <footer>
