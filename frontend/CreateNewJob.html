@@ -95,7 +95,7 @@
                 let button = document.getElementById("submitNewJob");
                 button.onclick = function () {
                     let customerName = document.getElementById("customerName").value;
-                    let incomingShippingContainment = document.getElementById("incomingShippingContainment").value;
+                    let incomingShippingContainment = document.getElementById("incomingShippingContainer").value;
                     let receivedDate = document.getElementById("receivedDate").value;
                     let unit = document.getElementById("unit").value;
                     let tearDown = document.getElementById("tearDown").checked;
@@ -115,7 +115,7 @@
 
                     let newJob = {
                         "Customer Name": customerName,
-                        "Incoming Shipping Containment": incomingShippingContainment,
+                        "Incoming Shipping Container": incomingShippingContainer,
                         "Received Date": receivedDate,
                         "Unit": unit,
                         "Tear Down": tearDown,

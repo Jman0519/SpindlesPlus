@@ -44,18 +44,18 @@
         <thead>
             <tr>
                 <th>Received Date</th>
-                <th>Container</th>
+                <th>Incoming Shipping Container</th>
                 <th>Customer Name</th>
                 <th>Unit</th>
                 <th>Tear Down</th>
                 <th>Quoted Date</th>
                 <th>Approval Date</th>
-                <th>Clean</th>
+                <th>Cleaning</th>
                 <th>Grind</th>
                 <th>Grind Info</th>
                 <th>Motor Requirement</th>
                 <th>Motor Info</th>
-                <th>Parts</th>
+                <th>Parts Required</th>
                 <th>Parts List</th>
                 <th>Build</th>
                 <th>Test</th>
@@ -83,7 +83,7 @@
     <script>
         function createTable(jobs) {
             let table = document.getElementById('data-table');
-            let headers = ["Received Date", "Container", "Customer Name", "Unit", "Tear Down", "Quoted Date", "Approval Date", "Cleaning", "Grind", "Grind Info", "Motor Requirement", "Motor Info", "Parts Required", "Parts List", "Build", "Test", "Estimated Ship Date", "Ready To Ship"];
+            let headers = ["Received Date", "Incoming Shipping Container", "Customer Name", "Unit", "Tear Down", "Quoted Date", "Approval Date", "Cleaning", "Grind", "Grind Info", "Motor Requirement", "Motor Info", "Parts Required", "Parts List", "Build", "Test", "Estimated Ship Date", "Ready To Ship"];
             //create rows
             let rows = [];
             for (let i = 0; i < jobs.length; i++) {
