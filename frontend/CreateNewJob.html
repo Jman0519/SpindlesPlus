@@ -98,7 +98,7 @@
                         "motorRequirements": motorRequirements
                     };
                     console.log(newJob);
-                    fetch("http://jaredHerron.tk/addJob", {
+                    fetch("/addJob", {
                         method: "POST",
                         body: JSON.stringify(newJob),
                         headers: {

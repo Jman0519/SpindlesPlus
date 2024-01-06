@@ -31,6 +31,7 @@ server.on('request', async (req, res) => {
     }
 
     let url = req.url;
+    console.log(url);
     console.log("url", url);
     if (url == "/") {
         res.writeHead(200, { 'Content-Type': 'text/html' });
@@ -45,14 +46,12 @@ server.on('request', async (req, res) => {
         res.end(fs.readFileSync('images/favicon.ico'));
     }
     else if (url == "/addJob") {
-        console.log("need to implement adding a job");
         let time = Date.now();
         body.uuid = time;
         jobs[time] = body;
         fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
     }
     else if (url == "/getJobs") {
-        console.log("need to implement getting all jobs");
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify(jobs));
     }

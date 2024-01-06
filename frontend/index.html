@@ -88,7 +88,7 @@
         </thead>
         <tbody>
             <!-- Add your data rows here -->
-            <tr onclick="showIframe('CreateNewJob.html')">
+            <tr onclick="showIframe('EditJob.html')">
                 <!-- Add your data for each column -->
             </tr>
         </tbody>
@@ -101,6 +101,55 @@
             var iframe = document.getElementById('popup-iframe');
             iframe.src = url;
         }
+    </script>
+
+    <script>
+        async function getData() {
+            let jobs = Object.values(await (await fetch("/getJobs")).json());
+            let table = document.getElementById('data-table');
+
+            // TODO: check if the data is any different
+            let headers = [];
+
+            //create rows
+            let rows = [];
+            for (let i = 0; i < jobs.length; i++) {
+                let row = document.createElement('tr');
+                for (let key in jobs[i]) {
+                    if (key == "uuid") {
+                        continue;
+                    }
+                    headers[key] = true;
+                    let cell = document.createElement('td');
+                    cell.textContent = jobs[i][key];
+                    row.appendChild(cell);
+                }
+                row.onclick = function () {
+                    showIframe('EditJob.html'); // Replace with actual URL
+                };
+                rows.push(row);
+            }
+
+            //create headers
+            let headerRow = document.createElement('tr');
+            for (let key in headers) {
+                let header = document.createElement('th');
+                header.textContent = key;
+                headerRow.appendChild(header);
+            }
+
+            // set the table
+            table.innerHTML = '';
+            table.appendChild(headerRow);
+            for (let i = 0; i < rows.length; i++) {
+                table.appendChild(rows[i]);
+            }
+
+        }
+        setInterval(function () {
+            // Call a function repetatively with 2 Second interval
+            getData();
+        }, 1000); //1000mSeconds update rate
     </script>
     <footer>
         <p>&copy; 2023 Multiplayer Snakes Game |
