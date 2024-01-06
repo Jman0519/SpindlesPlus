@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spindles Plus Internal Job Board</title>
+</head>
+
+<body>
+    <header>
+        <h1>Edit an exsisting Job Here</h1>
+        <p>Input the following information and click submit to edit an exsisting job</p>
+    </header>
+    <main>
+        <section class="cta">
+
+            <input type="text" id="employeeName" placeholder="Employee Name" required>
+            <br><br>
+
+            <input type="checkbox" id="partHasShipped" placeholder="Part has Shipped?" required>
+            <br><br><br><br>
+
+
+
+
+            <button id="closeOutJob" type="submit">Close Out Job</button>
+
+
+
+
+            <script>
+                let button = document.getElementById("closeOutJob");
+                button.onclick = function () {
+                    let customerName = document.getElementById("customerName").value;
+                    let receievedDate = document.getElementById("receievedDate").value;
+                    let unit = document.getElementById("unit").value;
+                    let tearDown = document.getElementById("tearDown").checked;
+                    let quotedDate = document.getElementById("quotedDate").value;
+                    let approvalDate = document.getElementById("approvalDate").value;
+                    let cleaning = document.getElementById("cleaning").checked;
+                    let grind = document.getElementById("grind").checked;
+                    let grindInfo = document.getElementById("grindInfo").value;
+                    let motorRequirements = document.getElementById("motorRequirements").value;
+
+                    let newJob = {
+                        "customerName": customerName,
+                        "receievedDate": receievedDate,
+                        "unit": unit,
+                        "tearDown": tearDown,
+                        "quotedDate": quotedDate,
+                        "approvalDate": approvalDate,
+                        "cleaning": cleaning,
+                        "grind": grind,
+                        "grindInfo": grindInfo,
+                        "motorRequirements": motorRequirements
+                    };
+                    console.log(newJob);
+                    fetch("/addJob", {
+                        method: "POST",
+                        body: JSON.stringify(newJob),
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    });
+                }
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Spindles Plus Incorporated |
+            <a href="index.html">Home</a> |
+            <a href="contactUs.html">Contact Us</a> |
+            <a href="about.html">About</a> |
+            <a href="privacyPolicy.html">Privacy Policy</a>
+            <a href="CreateNewJob.html">Create New Job</a>
+        </p>
+    </footer>
+</body>
+
+</html>
