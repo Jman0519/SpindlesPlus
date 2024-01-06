@@ -6,7 +6,7 @@ try {
 }
 catch (err) {
     console.log(err);
-    let jobs = [];
+    let jobs = {};
 }
 
 server = http.createServer();
@@ -46,7 +46,9 @@ server.on('request', async (req, res) => {
     }
     else if (url == "/addJob") {
         console.log("need to implement adding a job");
-        jobs.append(body);
+        let time = Date.now();
+        body.uuid = time;
+        jobs[time] = body;
         fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
     }
     else if (url == "/getJobs") {
@@ -55,7 +57,7 @@ server.on('request', async (req, res) => {
         res.end(JSON.stringify(jobs));
     }
     else if (url == "/deleteJob") {
-        jobs.splice(body.index, 1);
+        delete jobs[body.uuid];
         fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
     }
     else if (url == "/editJob") {
