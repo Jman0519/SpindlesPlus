@@ -1,6 +1,8 @@
 const http = require('http');
 const fs = require('fs');
 
+let jobs = JSON.parse(fs.readFileSync("jobs.json"));
+
 server = http.createServer();
 server.listen(80);
 
@@ -38,9 +40,20 @@ server.on('request', async (req, res) => {
     }
     else if (url == "/addJob") {
         console.log("need to implement adding a job");
+        jobs.append(body);
+        fs.writeFileSync("jobs.json", JSON.stringify(jobs));
     }
     else if (url == "/getJobs") {
         console.log("need to implement getting all jobs");
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(jobs));
+    }
+    else if (url == "/deleteJob") {
+        jobs.splice(body.index, 1);
+        fs.writeFileSync("jobs.json", JSON.stringify(jobs));
+    }
+    else if (url == "/editJob") {
+        console.log("need to implement editing a job");
     }
     else {
         res.writeHead(200, { 'Content-Type': 'text/html' });
