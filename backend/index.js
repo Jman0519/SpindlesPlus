@@ -73,7 +73,7 @@ server.on('request', async (req, res) => {
         newJobsEvent.emit('newJob');
     }
     else if (url == "/updateJobs") {
-        newJobsEvent.on('newJob', () => {
+        newJobsEvent.once('newJob', () => {
             res.writeHead(200, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify(jobs));
         });
