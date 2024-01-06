@@ -73,7 +73,9 @@
         <section class="cta">
 
             <input type="text" id="customerName" placeholder="Customer Name" required>
-            <br><br>
+            <label for="customerName">Customer Name </label>
+            <p>&nbsp;&nbsp;&nbsp;</p>
+            <!-- //trying 3 tabs instead of <br> <br> above -->
 
             <select id="incomingShippingContainer" placeholder="Incoming Shipping Container" required>
                 <option value="C">Crate</option>
@@ -81,14 +83,15 @@
                 <option value="CB">Cardboard Box</option>
                 <option value="J">Junk</option>
             </select>
-            <label for="grind">Incoming Shipping Container </label>
+            <label for="incomingShippingContainer">Incoming Shipping Container </label>
             <br><br>
 
             <input type="date" id="receivedDate" placeholder="Received Date" required>
-            <label for="grind">Received Date </label>
+            <label for="receivedDate">Received Date </label>
             <br><br>
 
             <input type="text" id="unit" placeholder="Unit" required>
+            <label for="unit">Unit/Part </label>
             <br><br>
 
             <input type="checkbox" id="tearDown" placeholder="Tear Down Required?" required>
@@ -96,11 +99,11 @@
             <br><br>
 
             <input type="date" id="quotedDate" placeholder="Customer Quoted Date" required>
-            <label for="grind">Customer Quoted Date </label>
+            <label for="quotedDate">Customer Quoted Date </label>
             <br><br>
 
             <input type="date" id="approvalDate" placeholder="Customer Approval Date" required>
-            <label for="grind">Customer Approval Date </label>
+            <label for="approvalDate">Customer Approval Date </label>
             <br><br>
 
             <input type="checkbox" id="cleaning" placeholder="Cleaning Complete?" required>
@@ -121,6 +124,7 @@
             <br><br>
 
             <input type="text" id="grindInfo" placeholder="Grind Info" required>
+            <label for="grindInfo">Grind Info</label>
             <br><br>
 
             <input type="checkbox" id="grindComplete" placeholder="Grind Complete?" required>
@@ -131,10 +135,11 @@
                 <option value="CB">Clean / Bake</option>
                 <option value="RE">Rewind / Epoxy</option>
             </select>
-            <label for="grind">Motor Requirement </label>
+            <label for="motorRequirement">Motor Requirement </label>
             <br><br>
 
             <input type="text" id="motorInfo" placeholder="Motor Info" required>
+            <label for="motorInfo">Motor Info </label>
             <br><br>
 
             <select id="partsRequired" placeholder="Parts Required?" required>
@@ -142,20 +147,23 @@
                 <option value="Customer">Customer Supplied Parts</option>
                 <option value="Other">Other</option>
             </select>
-            <label for="grind">Parts Required </label>
+            <label for="partsRequired">Parts Required </label>
             <br><br>
 
-            <input type="text" id="partsList" placeholder="Parts List?" required>
+            <input type="text" id="partsList" placeholder="Parts List" required>
+            <label for="partsList">Parts List </label>
             <br><br>
 
             <input type="text" id="partBuild" placeholder="Build Info" required>
+            <label for="partBuild">Build Info </label>
             <br><br>
 
             <input type="text" id="partTest" placeholder="Test Info" required>
+            <label for="partTest">Test Info </label>
             <br><br>
 
             <input type="date" id="estimatedShipDate" placeholder="Estimated Shipping Date?" required>
-            <label for="grind">Estimated Shipping Date </label>
+            <label for="estimatedShipDate">Estimated Shipping Date </label>
             <br><br>
 
             <input type="checkbox" id="readyToShip" placeholder="Ready to Ship?" required>
@@ -231,20 +239,19 @@
             </script>
         </section>
         <section class="instructions">
-            <h2>Directions Maybe??</h2>
+            <h2>Directions For Use</h2>
             <ul>
-                <li>Use arrow keys to control your snake.</li>
-                <li>Eat food to grow and avoid collisions with other snakes.</li>
-                <li>Survive and become the longest snake to win!</li>
+                <li>Not all fields have to present to start a new job</li>
+                <li>Jobs can be edited after creation very easily</li>
+                <li>We hope you like the new Job Board!</li>
             </ul>
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Spindles Plus Incorporated |
+        <p>&copy; 2023 Spindles Plus Incorporated | All Rights Reserved | 
             <a href="JobBoard.html">Home</a> |
             <a href="contactUs.html">Contact Us</a> |
             <a href="about.html">About</a> |
-            <a href="privacyPolicy.html">Privacy Policy</a>
             <a href="CreateNewJob.html">Create New Job</a>
         </p>
     </footer>
