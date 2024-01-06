@@ -93,7 +93,7 @@
 
             <script>
                 let button = document.getElementById("submitNewJob");
-                button.onclick = function () {
+                button.onclick = async function () {
                     let customerName = document.getElementById("customerName").value;
                     let incomingShippingContainment = document.getElementById("incomingShippingContainer").value;
                     let receivedDate = document.getElementById("receivedDate").value;
@@ -134,13 +134,15 @@
                         "Ready To Ship": readyToShip
                     };
                     console.log(newJob);
-                    fetch("/addJob", {
+                    await fetch("/addJob", {
                         method: "POST",
                         body: JSON.stringify(newJob),
                         headers: {
                             "Content-Type": "application/json"
                         }
                     });
+
+                    window.location.href = window.location.hostname;
                 }
             </script>
         </section>
