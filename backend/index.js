@@ -15,6 +15,12 @@ server.on('request', (req, res) => {
         res.writeHead(200, { 'Content-Type': 'image/x-icon' });
         res.end(fs.readFileSync('images/favicon.ico'));
     }
+    else if (url == "/addJob") {
+        console.log("need to implement adding a job");
+    }
+    else if (url == "/getJobs") {
+        console.log("need to implement getting all jobs");
+    }
     else {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(fs.readFileSync('frontend/index.html'));
