@@ -32,36 +32,13 @@
 </head>
 
 <body>
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Your Table</title>
-        <style>
-            table {
-                border-collapse: collapse;
-                width: 100%;
-            }
-
-            th,
-            td {
-                border: 1px solid #ddd;
-                padding: 8px;
-                text-align: left;
-            }
-
-            th {
-                background-color: #f2f2f2;
-            }
-
-            iframe {
-                border: none;
-                width: 300px;
-                height: 400px;
-                /* Adjust height as needed */
-            }
-        </style>
-    </head>
+    <p>&copy; 2023 Multiplayer Snakes Game |
+        <a href="index.html">Home</a> |
+        <a href="contactUs.html">Contact Us</a> |
+        <a href="about.html">About</a> |
+        <a href="privacyPolicy.html">Privacy Policy</a> |
+        <a href="CreateNewJob.html">Create New Job</a> |
+    </p>
 
     <table id="data-table">
         <thead>
@@ -76,7 +53,7 @@
                 <th>Clean</th>
                 <th>Grind</th>
                 <th>Grind Info</th>
-                <th>Motor</th>
+                <th>Motor Requirement</th>
                 <th>Motor Info</th>
                 <th>Parts</th>
                 <th>Parts List</th>
@@ -106,7 +83,7 @@
     <script>
         function createTable(jobs) {
             let table = document.getElementById('data-table');
-            let headers = ["Received Date", "Container", "Customer Name", "Unit", "Tear Down", "Quoted Date", "Approval Date", "Clean", "Grind", "Grind Info", "Motor", "Motor Info", "Parts", "Parts List", "Build", "Test", "Est Sip", "Ready To Ship"];
+            let headers = ["Received Date", "Container", "Customer Name", "Unit", "Tear Down", "Quoted Date", "Approval Date", "Clean", "Grind", "Grind Info", "Motor Requirement", "Motor Info", "Parts", "Parts List", "Build", "Test", "Est Sip", "Ready To Ship"];
             //create rows
             let rows = [];
             for (let i = 0; i < jobs.length; i++) {
@@ -155,7 +132,6 @@
             <a href="contactUs.html">Contact Us</a> |
             <a href="about.html">About</a> |
             <a href="privacyPolicy.html">Privacy Policy</a> |
-            <a href="CreateNewJob.html">Create New Job</a> |
         </p>
     </footer>
 </body>

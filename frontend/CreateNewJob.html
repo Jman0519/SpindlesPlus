@@ -93,11 +93,18 @@
                     let cleaning = document.getElementById("cleaning").checked;
                     let grind = document.getElementById("grind").checked;
                     let grindInfo = document.getElementById("grindInfo").value;
-                    let motorRequirements = document.getElementById("motorRequirements").value;
+                    let motorRequirement = document.getElementById("motorRequirement").value;
+                    let motorInfo = document.getElementById("motorInfo").value;
+                    let partsRequired = document.getElementById("partsRequired").value;
+                    let partsList = document.getElementById("partsList").value;
+                    let partBuild = document.getElementById("partBuild").value;
+                    let partTest = document.getElementById("partTest").value;
+                    let estimatedShipDate = document.getElementById("estimatedShipDate").value;
+                    let readyToShip = document.getElementById("readyToShip").checked;
 
                     let newJob = {
                         "Customer Name": customerName,
-                        "Receieved Date": receievedDate,
+                        "Received Date": receievedDate,
                         "Unit": unit,
                         "Tear Down": tearDown,
                         "Quoted Date": quotedDate,
@@ -105,7 +112,14 @@
                         "Cleaning": cleaning,
                         "Grind": grind,
                         "Grind Info": grindInfo,
-                        "Motor Requirements": motorRequirements
+                        "Motor Requirement": motorRequirement,
+                        "Motor Info": motorInfo,
+                        "Parts Required": partsRequired,
+                        "Parts List": partsList,
+                        "Build": partBuild,
+                        "Test": partTest,
+                        "Estimated Ship Date": estimatedShipDate,
+                        "Ready To Ship": readyToShip
                     };
                     console.log(newJob);
                     fetch("/addJob", {
