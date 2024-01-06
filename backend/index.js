@@ -1,12 +1,5 @@
 const http = require('http');
 const fs = require('fs');
-let socketio = require('socket.io');
-const Game = require('./Game.js');
-let game = new Game();
-setInterval(function () {
-    delete game;
-    game = new Game();
-}, 60 * 1000)
 
 server = http.createServer();
 server.listen(80);
@@ -50,9 +43,4 @@ server.on('request', (req, res) => {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(fs.readFileSync('frontend/index.html'));
     }
-});
-
-let io = socketio(server);
-io.on('connection', (socket) => {
-    game.addConnection(socket);
 });
