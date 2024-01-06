@@ -121,7 +121,7 @@
 
             <div class="input-group">
                 <label for="receivedDate">Received Date </label>
-                <input type="date" id="receivedDate" placeholder="Received Date" required>
+                <input type="date" class="default-today" id="receivedDate" placeholder="Received Date" required>
             </div>
 
             <div class="input-group">
@@ -286,6 +286,20 @@
                     //go back to home
                     window.location.href = window.location.hostname;
                 }
+            </script>
+
+            <!-- Add this script after your existing script or in the head section -->
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Get today's date in the format "YYYY-MM-DD"
+                    let today = new Date().toISOString().split('T')[0];
+
+                    // Set the default value for date input fields with the class "default-today"
+                    let dateInputs = document.querySelectorAll(".default-today");
+                    dateInputs.forEach(function (input) {
+                        input.value = today;
+                    });
+                });
             </script>
         </section>
         <section class="instructions">
