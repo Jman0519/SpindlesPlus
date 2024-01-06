@@ -8,3 +8,12 @@ store old/closed jobs somewhere locally on pi possibly
 
 figure out the chrome grind jig hierarchy
 
+oreient all dates so they are  01/05/24 format
+
+Tear Down yes or no
+
+cleaning yes or no
+
+ready to ship yes or no
+
+grind yes or no
