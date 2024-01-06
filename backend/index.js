@@ -56,6 +56,11 @@ server.on('request', async (req, res) => {
         res.writeHead(200, { 'Content-Type': 'image/x-icon' });
         res.end(fs.readFileSync('images/favicon.ico'));
     }
+    else if (url == "/spindles_plus_image.gif") {
+        res.writeHead(200, { 'Content-Type': 'image/gif' });
+        res.end(fs.readFileSync('images/spindles_plus_image.gif'));
+    }
+
     else if (url == "/addJob") {
         let time = Date.now();
         body.uuid = time;

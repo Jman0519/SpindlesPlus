@@ -142,3 +142,19 @@ a:hover {
     border-bottom: 2px solid #000;
     /* Add a black border to the bottom of each row */
 }
+
+.jobBoard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links {
+    order: 1;
+    /* This moves the links to the far left */
+}
+
+.copyright {
+    order: 2;
+    /* This moves the copyright text to the far right */
+}
