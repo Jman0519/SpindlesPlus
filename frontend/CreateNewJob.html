@@ -33,6 +33,7 @@
             <br><br>
 
             <input type="checkbox" id="tearDown" placeholder="Tear Down Required?" required>
+            <label for="tearDown">Tear Down Required? (Checkbox for Yes, leave blank for No) </label>
             <br><br>
 
             <input type="date" id="quotedDate" placeholder="Customer Quoted Date" required>
@@ -41,13 +42,20 @@
             <input type="date" id="approvalDate" placeholder="Customer Approval Date" required>
             <br><br>
 
-            <label for="cleaning">Cleaning Complete? (Check box for Yes, leave blank for No) </label>
             <input type="checkbox" id="cleaning" placeholder="Cleaning Complete?" required>
-            <label for="cleaning">Cleaning Complete? (Check box for Yes, leave blank for No) </label>
+            <label for="cleaning">Cleaning Complete? (Checkbox for Yes, leave blank for No) </label>
             <br><br>
 
-            <input type="checkbox" id="grind" placeholder="Grind Required?" required>
-            <label for="grind">Nick needs to look further into the grind options </label>
+            <input type="checkbox" id="grindRequired" placeholder="Grind Required?" required>
+            <label for="grind">Grind Required? (Checkbox for Yes, leave blank for No) </label>
+            <br><br>
+
+            <select id="grindType" placeholder="Type of Grind" required>
+                <option value="C">Chrome</option>
+                <option value="G">Grind</option>
+                <option value="J">Jig</option>
+                <option value="N/A">Not Required</option>
+            </select>
             <br><br>
 
             <input type="text" id="grindInfo" placeholder="Grind Info" required>
@@ -82,6 +90,7 @@
             <br><br>
 
             <input type="checkbox" id="readyToShip" placeholder="Ready to Ship?" required>
+            <label for="readyToShip">Ready To Ship? (Checkbox for Yes, leave blank for No) </label>
             <br><br><br><br>
 
 
