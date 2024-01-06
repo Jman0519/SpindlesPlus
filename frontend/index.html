@@ -5,37 +5,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spindles Plus Internal Job Board</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        iframe {
+            border: none;
+            width: 300px;
+            height: 400px;
+            /* Adjust height as needed */
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <h1>This is the Job Board we are making</h1>
-        <p>Play with friends and become the ultimate snake master!</p>
-    </header>
-    <main>
-        <section class="cta">
-            <h2>Join the Fun</h2>
-            <p>Enter your name and start slithering.</p>
-            <input type="text" id="playerName" placeholder="Your Name" required>
-            <button id="joinButton" type="submit">Join Game</button>
-            <script>
-                let button = document.getElementById("joinButton");
-                button.onclick = function () {
-                    let name = document.getElementById("playerName").value;
-                    window.sessionStorage.setItem("name", name);
-                    window.location.href = "/game.html";
-                }
-            </script>
-        </section>
-        <section class="instructions">
-            <h2>How to Play</h2>
-            <ul>
-                <li>Use arrow keys to control your snake.</li>
-                <li>Eat food to grow and avoid collisions with other snakes.</li>
-                <li>Survive and become the longest snake to win!</li>
-            </ul>
-        </section>
-    </main>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Table</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            th,
+            td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f2f2f2;
+            }
+
+            iframe {
+                border: none;
+                width: 300px;
+                height: 400px;
+                /* Adjust height as needed */
+            }
+        </style>
+    </head>
+
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Received Date</th>
+                <th>Container</th>
+                <th>Customer Name</th>
+                <th>Unit</th>
+                <th>Tear Down</th>
+                <th>Quoted Date</th>
+                <th>Approval Date</th>
+                <th>Clean</th>
+                <th>Grind</th>
+                <th>Grind Info</th>
+                <th>Motor</th>
+                <th>Motor Info</th>
+                <th>Parts</th>
+                <th>Parts List</th>
+                <th>Build</th>
+                <th>Test</th>
+                <th>Est Sip</th>
+                <th>Ready To Ship</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add your data rows here -->
+            <tr onclick="showIframe('CreateNewJob.html')">
+                <!-- Add your data for each column -->
+            </tr>
+        </tbody>
+    </table>
+
+    <iframe id="popup-iframe"></iframe>
+
+    <script>
+        function showIframe(url) {
+            var iframe = document.getElementById('popup-iframe');
+            iframe.src = url;
+        }
+    </script>
     <footer>
         <p>&copy; 2023 Multiplayer Snakes Game |
             <a href="index.html">Home</a> |
