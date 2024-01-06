@@ -68,21 +68,10 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Add your data rows here -->
-            <tr onclick="showIframe('EditJob.html')">
-                <!-- Add your data for each column -->
+            <tr onclick="window.location.href = window.location.hostname + '/EditJob.html'">
             </tr>
         </tbody>
     </table>
-
-    <iframe id="popup-iframe"></iframe>
-
-    <script>
-        function showIframe(url) {
-            var iframe = document.getElementById('popup-iframe');
-            iframe.src = url;
-        }
-    </script>
 
     <script>
         function createTable(jobs) {
@@ -115,7 +104,7 @@
                     row.appendChild(cell);
                 }
                 row.onclick = function () {
-                    showIframe('EditJob.html'); // Replace with actual URL
+                    window.location.href = '/EditJob.html';
                 };
                 rows.push(row);
             }
