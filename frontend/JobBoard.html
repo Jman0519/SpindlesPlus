@@ -141,11 +141,14 @@
 
             // TODO: check if the data is any different
             createTable(jobs);
+            let updateJobs = fetch("/updateJobs").then(getData);
         }
-        setInterval(function () {
-            // Call a function repetatively with 2 Second interval
-            getData();
-        }, 1000); //1000mSeconds update rate
+
+        getData();
+        // setInterval(function () {
+        //     // Call a function repetatively with 2 Second interval
+        //     getData();
+        // }, 10000); //1000mSeconds update rate
     </script>
     <footer>
         <p>&copy; 2023 Spindles Plus Incorporated | All Rights Reserved |

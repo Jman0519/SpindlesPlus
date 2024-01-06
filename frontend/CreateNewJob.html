@@ -31,6 +31,29 @@
 
         section.cta {
             margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            flex: 1;
+            text-align: left;
+            margin-right: 10px;
+        }
+
+        .input-group input,
+        .input-group select,
+        .input-group checkbox {
+            flex: 2;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
         }
 
         button {
@@ -61,6 +84,16 @@
             bottom: 0;
             width: 100%;
         }
+
+        hr {
+            margin: 20px 0;
+            /* Adjust the top and bottom margin as needed */
+            border: none;
+            height: 2px;
+            /* Adjust the thickness of the line */
+            background-color: #333;
+            /* Adjust the color of the line */
+        }
     </style>
 </head>
 
@@ -71,104 +104,122 @@
     </header>
     <main>
         <section class="cta">
+            <div class="input-group">
+                <label for="customerName">Customer Name </label>
+                <input type="text" id="customerName" placeholder="Customer Name" required>
+            </div>
 
-            <input type="text" id="customerName" placeholder="Customer Name" required>
-            <label for="customerName">Customer Name </label>
-            <br> <br>
+            <div class="input-group">
+                <label for="incomingShippingContainer">Incoming Shipping Container </label>
+                <select id="incomingShippingContainer" placeholder="Incoming Shipping Container" required>
+                    <option value="C">Crate</option>
+                    <option value="S">Skid</option>
+                    <option value="CB">Cardboard Box</option>
+                    <option value="J">Junk</option>
+                </select>
+            </div>
 
-            <select id="incomingShippingContainer" placeholder="Incoming Shipping Container" required>
-                <option value="C">Crate</option>
-                <option value="S">Skid</option>
-                <option value="CB">Cardboard Box</option>
-                <option value="J">Junk</option>
-            </select>
-            <label for="incomingShippingContainer">Incoming Shipping Container </label>
-            <br><br>
+            <div class="input-group">
+                <label for="receivedDate">Received Date </label>
+                <input type="date" id="receivedDate" placeholder="Received Date" required>
+            </div>
 
-            <input type="date" id="receivedDate" placeholder="Received Date" required>
-            <label for="receivedDate">Received Date </label>
-            <br><br>
+            <div class="input-group">
+                <label for="unit">Unit/Part </label>
+                <input type="text" id="unit" placeholder="Unit" required>
+            </div>
+            <hr>
 
-            <input type="text" id="unit" placeholder="Unit" required>
-            <label for="unit">Unit/Part </label>
-            <br><br>
+            <div class="input-group">
+                <label for="quotedDate">Customer Quoted Date </label>
+                <input type="date" id="quotedDate" placeholder="Customer Quoted Date" required>
+            </div>
 
-            <input type="checkbox" id="tearDown" placeholder="Tear Down Required?" required>
-            <label for="tearDown">Tear Down Required? (Checkbox for Yes, leave blank for No) </label>
-            <br><br>
+            <div class="input-group">
+                <label for="approvalDate">Customer Approval Date </label>
+                <input type="date" id="approvalDate" placeholder="Customer Approval Date" required>
+            </div>
+            <hr>
 
-            <input type="date" id="quotedDate" placeholder="Customer Quoted Date" required>
-            <label for="quotedDate">Customer Quoted Date </label>
-            <br><br>
+            <div class="input-group">
+                <label for="cleaning">Cleaning Complete? (Checkbox for Yes, leave blank for No) </label>
+                <input type="checkbox" id="cleaning" placeholder="Cleaning Complete?" required>
+            </div>
 
-            <input type="date" id="approvalDate" placeholder="Customer Approval Date" required>
-            <label for="approvalDate">Customer Approval Date </label>
-            <br><br>
+            <div class="input-group">
+                <label for="grindRequired">Grind Required? (Checkbox for Yes, leave blank for No) </label>
+                <input type="checkbox" id="grindRequired" placeholder="Grind Required?" required>
+            </div>
 
-            <input type="checkbox" id="cleaning" placeholder="Cleaning Complete?" required>
-            <label for="cleaning">Cleaning Complete? (Checkbox for Yes, leave blank for No) </label>
-            <br><br>
+            <div class="input-group">
+                <label for="grindType">Type of Grind </label>
+                <select id="grindType" placeholder="Type of Grind" required>
+                    <option value="N/A">Not Required</option>
+                    <option value="C">Chrome</option>
+                    <option value="G">Grind</option>
+                    <option value="J">Jig</option>
+                </select>
+            </div>
 
-            <input type="checkbox" id="grindRequired" placeholder="Grind Required?" required>
-            <label for="grindRequired">Grind Required? (Checkbox for Yes, leave blank for No) </label>
-            <br><br>
+            <div class="input-group">
+                <label for="grindInfo">Grind Info</label>
+                <input type="text" id="grindInfo" placeholder="Grind Info" required>
+            </div>
 
-            <select id="grindType" placeholder="Type of Grind" required>
-                <option value="N/A">Not Required</option>
-                <option value="C">Chrome</option>
-                <option value="G">Grind</option>
-                <option value="J">Jig</option>
-            </select>
-            <label for="grindType">Type of Grind </label>
-            <br><br>
+            <div class="input-group">
+                <label for="grindComplete">Grind Complete? (Checkbox for Yes, leave blank for No) </label>
+                <input type="checkbox" id="grindComplete" placeholder="Grind Complete?" required>
+            </div>
+            <hr>
 
-            <input type="text" id="grindInfo" placeholder="Grind Info" required>
-            <label for="grindInfo">Grind Info</label>
-            <br><br>
+            <div class="input-group">
+                <label for="motorRequirement">Motor Requirement </label>
+                <select id="motorRequirement" placeholder="Motor Requirement" required>
+                    <option value="CB">Clean / Bake</option>
+                    <option value="RE">Rewind / Epoxy</option>
+                </select>
+            </div>
 
-            <input type="checkbox" id="grindComplete" placeholder="Grind Complete?" required>
-            <label for="grindComplete">Grind Complete? (Checkbox for Yes, leave blank for No) </label>
-            <br><br>
+            <div class="input-group">
+                <label for="motorInfo">Motor Info </label>
+                <input type="text" id="motorInfo" placeholder="Motor Info" required>
+            </div>
+            <hr>
 
-            <select id="motorRequirement" placeholder="Motor Requirement" required>
-                <option value="CB">Clean / Bake</option>
-                <option value="RE">Rewind / Epoxy</option>
-            </select>
-            <label for="motorRequirement">Motor Requirement </label>
-            <br><br>
+            <div class="input-group">
+                <label for="partsRequired">Parts Required </label>
+                <select id="partsRequired" placeholder="Parts Required?" required>
+                    <option value="SPI">Spindles Plus Parts</option>
+                    <option value="Customer">Customer Supplied Parts</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
 
-            <input type="text" id="motorInfo" placeholder="Motor Info" required>
-            <label for="motorInfo">Motor Info </label>
-            <br><br>
+            <div class="input-group">
+                <label for="partsList">Parts List </label>
+                <input type="text" id="partsList" placeholder="Parts List" required>
+            </div>
 
-            <select id="partsRequired" placeholder="Parts Required?" required>
-                <option value="SPI">Spindles Plus Parts</option>
-                <option value="Customer">Customer Supplied Parts</option>
-                <option value="Other">Other</option>
-            </select>
-            <label for="partsRequired">Parts Required </label>
-            <br><br>
+            <div class="input-group">
+                <label for="partBuild">Build Info </label>
+                <input type="text" id="partBuild" placeholder="Build Info" required>
+            </div>
 
-            <input type="text" id="partsList" placeholder="Parts List" required>
-            <label for="partsList">Parts List </label>
-            <br><br>
+            <div class="input-group">
+                <label for="partTest">Test Info </label>
+                <input type="text" id="partTest" placeholder="Test Info" required>
+            </div>
+            <hr>
 
-            <input type="text" id="partBuild" placeholder="Build Info" required>
-            <label for="partBuild">Build Info </label>
-            <br><br>
+            <div class="input-group">
+                <label for="estimatedShipDate">Estimated Shipping Date </label>
+                <input type="date" id="estimatedShipDate" placeholder="Estimated Shipping Date?" required>
+            </div>
 
-            <input type="text" id="partTest" placeholder="Test Info" required>
-            <label for="partTest">Test Info </label>
-            <br><br>
-
-            <input type="date" id="estimatedShipDate" placeholder="Estimated Shipping Date?" required>
-            <label for="estimatedShipDate">Estimated Shipping Date </label>
-            <br><br>
-
-            <input type="checkbox" id="readyToShip" placeholder="Ready to Ship?" required>
-            <label for="readyToShip">Ready To Ship? (Checkbox for Yes, leave blank for No) </label>
-            <br><br><br><br>
-
+            <div class="input-group">
+                <label for="readyToShip">Ready To Ship? (Checkbox for Yes, leave blank for No) </label>
+                <input type="checkbox" id="readyToShip" placeholder="Ready to Ship?" required>
+            </div>
 
 
 
@@ -247,7 +298,7 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Spindles Plus Incorporated | All Rights Reserved | 
+        <p>&copy; 2023 Spindles Plus Incorporated | All Rights Reserved |
             <a href="JobBoard.html">Home</a> |
             <a href="contactUs.html">Contact Us</a> |
             <a href="about.html">About</a> |

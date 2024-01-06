@@ -1,5 +1,6 @@
 const http = require('http');
 const fs = require('fs');
+const EventEmitter = require('node:events');
 
 let jobs = {};
 try {
@@ -11,6 +12,8 @@ catch (err) {
 
 server = http.createServer();
 server.listen(80);
+
+let newJobsEvent = new EventEmitter();
 
 server.on('request', async (req, res) => {
     console.log('\nIncoming Request!!!');
@@ -54,6 +57,7 @@ server.on('request', async (req, res) => {
         body.uuid = time;
         jobs[time] = body;
         fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
+        newJobsEvent.emit('newJob');
     }
     else if (url == "/getJobs") {
         res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -65,6 +69,14 @@ server.on('request', async (req, res) => {
     }
     else if (url == "/editJob") {
         console.log("need to implement editing a job");
+
+        newJobsEvent.emit('newJob');
+    }
+    else if (url == "/updateJobs") {
+        newJobsEvent.on('newJob', () => {
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify(jobs));
+        });
     }
     else {
         res.writeHead(200, { 'Content-Type': 'text/html' });
