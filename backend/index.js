@@ -1,7 +1,13 @@
 const http = require('http');
 const fs = require('fs');
 
-let jobs = JSON.parse(fs.readFileSync("./backend/jobs.json"));
+try {
+    let jobs = JSON.parse(fs.readFileSync("./backend/jobs.json"));
+}
+catch (err) {
+    console.log(err);
+    let jobs = [];
+}
 
 server = http.createServer();
 server.listen(80);
