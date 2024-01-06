@@ -17,7 +17,7 @@
             
             <input type="text" id="customerName" placeholder="Customer Name" required>
             <br>
-            
+
             <input type="date" id="receievedDate" placeholder="Receieved Date" required>
             <br>
 
@@ -67,16 +67,37 @@
 
 
             <button id="submitNewJob" type="submit">Submit New Job</button>
-            
-            
-            
-            
+
+
+
+
             <script>
                 let button = document.getElementById("submitNewJob");
                 button.onclick = function () {
-                    let name = document.getElementById("playerName").value;
-                    window.sessionStorage.setItem("name", name);
-                    window.location.href = "/game.html";
+                    let customerName = document.getElementById("customerName").value;
+                    let receievedDate = document.getElementById("receievedDate").value;
+                    let unit = document.getElementById("unit").value;
+                    let tearDown = document.getElementById("tearDown").checked;
+                    let quotedDate = document.getElementById("quotedDate").value;
+                    let approvalDate = document.getElementById("approvalDate").value;
+                    let cleaning = document.getElementById("cleaning").checked;
+                    let newJob = {
+                        "customerName": customerName,
+                        "receievedDate": receievedDate,
+                        "unit": unit,
+                        "tearDown": tearDown,
+                        "quotedDate": quotedDate,
+                        "approvalDate": approvalDate,
+                        "cleaning": cleaning
+                    };
+                    console.log(newJob);
+                    fetch("http://jaredHerron.tk/addJob", {
+                        method: "POST",
+                        body: JSON.stringify(newJob),
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    });
                 }
             </script>
         </section>
