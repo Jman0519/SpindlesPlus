@@ -18,7 +18,7 @@
             <input type="text" id="customerName" placeholder="Customer Name" required>
             <br><br>
 
-            <select id="incomingShippingContainment" placeholder="Incoming Shipping Containment" required>
+            <select id="incomingShippingContainer" placeholder="Incoming Shipping Container" required>
                 <option value="C">Crate</option>
                 <option value="S">Skid</option>
                 <option value="CB">Cardboard Box</option>
@@ -94,9 +94,9 @@
 
             <script>
                 let button = document.getElementById("submitNewJob");
-                button.onclick = function () {
+                button.onclick = async function () {
                     let customerName = document.getElementById("customerName").value;
-                    let incomingShippingContainment = document.getElementById("incomingShippingContainment").value;
+                    let incomingShippingContainment = document.getElementById("incomingShippingContainer").value;
                     let receivedDate = document.getElementById("receivedDate").value;
                     let unit = document.getElementById("unit").value;
                     let tearDown = document.getElementById("tearDown").checked;
@@ -116,7 +116,7 @@
 
                     let newJob = {
                         "Customer Name": customerName,
-                        "Incoming Shipping Containment": incomingShippingContainment,
+                        "Incoming Shipping Container": incomingShippingContainer,
                         "Received Date": receivedDate,
                         "Unit": unit,
                         "Tear Down": tearDown,
@@ -135,13 +135,15 @@
                         "Ready To Ship": readyToShip
                     };
                     console.log(newJob);
-                    fetch("/addJob", {
+                    await fetch("/addJob", {
                         method: "POST",
                         body: JSON.stringify(newJob),
                         headers: {
                             "Content-Type": "application/json"
                         }
                     });
+
+                    window.location.href = window.location.hostname;
                 }
             </script>
         </section>
