@@ -135,7 +135,7 @@
                         "Ready To Ship": readyToShip
                     };
                     console.log(newJob);
-                    await fetch("/addJob", {
+                    fetch("/addJob", {
                         method: "POST",
                         body: JSON.stringify(newJob),
                         headers: {
@@ -143,6 +143,7 @@
                         }
                     });
 
+                    //go back to home
                     window.location.href = window.location.hostname;
                 }
             </script>
