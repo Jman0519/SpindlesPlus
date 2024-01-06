@@ -15,74 +15,22 @@
     <main>
         <section class="cta">
 
-            <input type="text" id="customerName" placeholder="Customer Name" required>
+            <input type="text" id="employeeName" placeholder="Employee Name" required>
             <br><br>
 
-            <input type="date" id="receivedDate" placeholder="Received Date" required>
-            <br><br>
-
-            <input type="text" id="unit" placeholder="Unit" required>
-            <br><br>
-
-            <input type="checkbox" id="tearDown" placeholder="Tear Down Required?" required>
-            <br><br>
-
-            <input type="date" id="quotedDate" placeholder="Customer Quoted Date" required>
-            <br><br>
-
-            <input type="date" id="approvalDate" placeholder="Customer Approval Date" required>
-            <br><br>
-
-            <input type="checkbox" id="cleaning" placeholder="Cleaning Complete?" required>
-            <br><br>
-
-            <input type="checkbox" id="grind" placeholder="Grind Required?" required>
-            <br><br>
-
-            <input type="text" id="grindInfo" placeholder="Grind Info" required>
-            <br><br>
-
-            <select id="motorRequirement" placeholder="Motor Requirments" required>
-                <option value="CB">Clean / Bake</option>
-                <option value="RE">Rewind / Epoxy</option>
-            </select>
-            <br><br>
-
-            <input type="text" id="motorInfo" placeholder="Motor Info" required>
-            <br><br>
-
-            <select id="partsRequired" placeholder="Parts Required?" required>
-                <option value="SPI">Spindles Plus Parts</option>
-                <option value="Customer">Customer Supplied Parts</option>
-                <option value="Other">Other</option>
-            </select>
-            <br><br>
-
-            <input type="text" id="partsList" placeholder="Parts List?" required>
-            <br><br>
-
-            <input type="text" id="partBuild" placeholder="Build Info" required>
-            <br><br>
-
-            <input type="text" id="partTest" placeholder="Test Info" required>
-            <br><br>
-
-            <input type="date" id="estimatedShipDate" placeholder="Estimated Shipping Date?" required>
-            <br><br>
-
-            <input type="checkbox" id="readyToShip" placeholder="Ready to Ship?" required>
+            <input type="checkbox" id="partHasShipped" placeholder="Part has Shipped?" required>
             <br><br><br><br>
 
 
 
 
-            <button id="submitNewJob" type="submit">Submit New Job</button>
+            <button id="closeOutJob" type="submit">Close Out Job</button>
 
 
 
 
             <script>
-                let button = document.getElementById("submitNewJob");
+                let button = document.getElementById("closeOutJob");
                 button.onclick = function () {
                     let customerName = document.getElementById("customerName").value;
                     let receievedDate = document.getElementById("receievedDate").value;
