@@ -96,14 +96,15 @@
                 let button = document.getElementById("submitNewJob");
                 button.onclick = async function () {
                     let customerName = document.getElementById("customerName").value;
-                    let incomingShippingContainment = document.getElementById("incomingShippingContainer").value;
+                    let incomingShippingContainer = document.getElementById("incomingShippingContainer").value;
                     let receivedDate = document.getElementById("receivedDate").value;
                     let unit = document.getElementById("unit").value;
                     let tearDown = document.getElementById("tearDown").checked;
                     let quotedDate = document.getElementById("quotedDate").value;
                     let approvalDate = document.getElementById("approvalDate").value;
                     let cleaning = document.getElementById("cleaning").checked;
-                    let grind = document.getElementById("grind").checked;
+                    let grindRequiered = document.getElementById("grindRequiered").checked;
+                    let grindType = document.getElementById("grindType").value;
                     let grindInfo = document.getElementById("grindInfo").value;
                     let motorRequirement = document.getElementById("motorRequirement").value;
                     let motorInfo = document.getElementById("motorInfo").value;
@@ -123,7 +124,8 @@
                         "Quoted Date": quotedDate,
                         "Approval Date": approvalDate,
                         "Cleaning": cleaning,
-                        "Grind": grind,
+                        "Grind Required": grindRequiered,
+                        "Grind Type": grindType,
                         "Grind Info": grindInfo,
                         "Motor Requirement": motorRequirement,
                         "Motor Info": motorInfo,

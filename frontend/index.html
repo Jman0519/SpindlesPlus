@@ -32,7 +32,7 @@
 </head>
 
 <body>
-    <p>&copy; 2023 Spindles Plus Incorporated | 
+    <p>&copy; 2023 Spindles Plus Incorporated |
         <a href="index.html">Job Board</a> |
         <a href="contactUs.html">Contact Us</a> |
         <a href="about.html">About</a> |
@@ -50,7 +50,8 @@
                 <th>Quoted Date</th>
                 <th>Approval Date</th>
                 <th>Cleaning</th>
-                <th>Grind</th>
+                <th>Grind Required</th>
+                <th>Grind Type</th>
                 <th>Grind Info</th>
                 <th>Motor Requirement</th>
                 <th>Motor Info</th>
@@ -82,14 +83,26 @@
     <script>
         function createTable(jobs) {
             let table = document.getElementById('data-table');
-            let headers = ["Received Date", "Incoming Shipping Container", "Customer Name", "Unit", "Tear Down", "Quoted Date", "Approval Date", "Cleaning", "Grind", "Grind Info", "Motor Requirement", "Motor Info", "Parts Required", "Parts List", "Build", "Test", "Estimated Ship Date", "Ready To Ship"];
+            let headers = ["Received Date", "Incoming Shipping Container", "Customer Name", "Unit", "Tear Down", "Quoted Date", "Approval Date", "Cleaning", "Grind Required", "Grind Type", "Grind Info", "Motor Requirement", "Motor Info", "Parts Required", "Parts List", "Build", "Test", "Estimated Ship Date", "Ready To Ship"];
             //create rows
             let rows = [];
             for (let i = 0; i < jobs.length; i++) {
                 let row = document.createElement('tr');
                 for (let header of headers) {
                     let cell = document.createElement('td');
-                    cell.textContent = jobs[i][header];
+
+                    let text = jobs[i][header];
+
+                    if (header == "Received Date" || header == "Quoted Date" || header == "Approval Date" || header == "Estimated Ship Date") {
+                        //change from yyyy-mm-dd to mm/dd/yy
+                        text = text.split('-');
+                        text = text[1] + '/' + text[2] + '/' + text[0].slice(-2);
+                    }
+                    if (header == "Tear Down" || header == "Cleaning" || header == "Grind Required" || header == "Ready To Ship") {
+                        //change from true/false to yes/no
+                        text = text ? "Yes" : "No";
+                    }
+                    cell.textContent = text;
                     row.appendChild(cell);
                 }
                 row.onclick = function () {
