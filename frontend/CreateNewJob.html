@@ -14,13 +14,49 @@
     </header>
     <main>
         <section class="cta">
+
             <input type="text" id="playerName" placeholder="Your Name" required>
+            <p>The current value is: _______</p>
             <br> 
-            <input type="text" id="jobName" placeholder="Job Name" required>
+            
+            <input type="text" id="customerName" placeholder="Customer Name" required>
+            <p>The current value is: _______</p>
             <br>
-            <button id="joinButton" type="submit">Join Game</button>
+            
+            <input type="date" id="receievedDate" placeholder="Receieved Date" required>
+            <p>The current value is: _______</p>
+            <br>
+
+            <input type="text" id="unit" placeholder="Unit" required>
+            <p>The current value is: _______</p>
+            <br>
+
+            <input type="checkbox" id="tearDown" placeholder="Tear Down Required?" required>
+            <p>The current value is: _______</p>
+            <br>
+
+            <input type="date" id="quotedDate" placeholder="Customer Quoted Date" required>
+            <p>The current value is: _______</p>
+            <br>
+
+            <input type="date" id="approvalDate" placeholder="Customer Approval Date" required>
+            <p>The current value is: _______</p>
+            <br>
+
+            <input type="checkbox" id="cleaning" placeholder="Cleaning Complete?" required>
+            <p>The current value is: _______</p>
+            <br>
+
+
+
+
+            <button id="submitNewJob" type="submit">Submit New Job</button>
+            
+            
+            
+            
             <script>
-                let button = document.getElementById("joinButton");
+                let button = document.getElementById("submitNewJob");
                 button.onclick = function () {
                     let name = document.getElementById("playerName").value;
                     window.sessionStorage.setItem("name", name);
@@ -29,7 +65,7 @@
             </script>
         </section>
         <section class="instructions">
-            <h2>How to Play</h2>
+            <h2>Directions Maybe??</h2>
             <ul>
                 <li>Use arrow keys to control your snake.</li>
                 <li>Eat food to grow and avoid collisions with other snakes.</li>
@@ -38,7 +74,7 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Multiplayer Snakes Game |
+        <p>&copy; 2023 Spindles Plus Incorporated |
             <a href="index.html">Home</a> |
             <a href="contactUs.html">Contact Us</a> |
             <a href="about.html">About</a> |
