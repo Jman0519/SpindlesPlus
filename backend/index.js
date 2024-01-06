@@ -5,6 +5,23 @@ server = http.createServer();
 server.listen(80);
 
 server.on('request', (req, res) => {
+    console.log('\nIncoming Request!!!');
+    const buffers = [];
+    for await (const chunk of req) {
+        buffers.push(chunk);
+    }
+    let buffer = Buffer.concat(buffers).toString();
+
+    let body = {};
+    if (buffer.length == 0) {
+        console.log('no body');
+    }
+    else {
+        body = JSON.parse(buffer.toString());
+        console.log('\nbody: ')
+        console.log(JSON.stringify(body));
+    }
+
     let url = req.url;
     console.log("url", url);
     if (url == "/") {
