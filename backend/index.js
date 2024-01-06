@@ -35,7 +35,7 @@ server.on('request', async (req, res) => {
     console.log("url", url);
     if (url == "/") {
         res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(fs.readFileSync('frontend/index.html'));
+        res.end(fs.readFileSync('frontend/JobBoard.html'));
     }
     else if (url == "/CreateNewJob.html") {
         res.writeHead(200, { 'Content-Type': 'text/html' });
@@ -68,6 +68,6 @@ server.on('request', async (req, res) => {
     }
     else {
         res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(fs.readFileSync('frontend/index.html'));
+        res.end(fs.readFileSync('frontend/JobBoard.html'));
     }
 });
