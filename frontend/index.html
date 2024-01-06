@@ -53,6 +53,7 @@
                 <th>Grind Required</th>
                 <th>Grind Type</th>
                 <th>Grind Info</th>
+                <th>Grind Complete</th>
                 <th>Motor Requirement</th>
                 <th>Motor Info</th>
                 <th>Parts Required</th>
@@ -83,7 +84,7 @@
     <script>
         function createTable(jobs) {
             let table = document.getElementById('data-table');
-            let headers = ["Customer Name", "Received Date", "Incoming Shipping Container", "Unit", "Tear Down", "Quoted Date", "Approval Date", "Cleaning", "Grind Required", "Grind Type", "Grind Info", "Motor Requirement", "Motor Info", "Parts Required", "Parts List", "Build", "Test", "Estimated Ship Date", "Ready To Ship"];
+            let headers = ["Customer Name", "Received Date", "Incoming Shipping Container", "Unit", "Tear Down", "Quoted Date", "Approval Date", "Cleaning", "Grind Required", "Grind Type", "Grind Info", "Grind Complete", "Motor Requirement", "Motor Info", "Parts Required", "Parts List", "Build", "Test", "Estimated Ship Date", "Ready To Ship"];
             //create rows
             let rows = [];
             for (let i = 0; i < jobs.length; i++) {
@@ -98,7 +99,7 @@
                         text = text.split('-');
                         text = text[1] + '/' + text[2] + '/' + text[0].slice(-2);
                     }
-                    if (header == "Tear Down" || header == "Cleaning" || header == "Grind Required" || header == "Ready To Ship") {
+                    if (header == "Tear Down" || header == "Cleaning" || header == "Grind Required" || header == "Grind Complete" || header == "Ready To Ship") {
                         //change from true/false to yes/no
                         text = text ? "Yes" : "No";
                     }
