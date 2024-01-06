@@ -24,9 +24,11 @@
                 <option value="CB">Cardboard Box</option>
                 <option value="J">Junk</option>
             </select>
+            <label for="grind">Incoming Shipping Container </label>
             <br><br>
 
             <input type="date" id="receivedDate" placeholder="Received Date" required>
+            <label for="grind">Received Date </label>
             <br><br>
 
             <input type="text" id="unit" placeholder="Unit" required>
@@ -37,9 +39,11 @@
             <br><br>
 
             <input type="date" id="quotedDate" placeholder="Customer Quoted Date" required>
+            <label for="grind">Customer Quoted Date </label>
             <br><br>
 
             <input type="date" id="approvalDate" placeholder="Customer Approval Date" required>
+            <label for="grind">Customer Approval Date </label>
             <br><br>
 
             <input type="checkbox" id="cleaning" placeholder="Cleaning Complete?" required>
@@ -51,11 +55,12 @@
             <br><br>
 
             <select id="grindType" placeholder="Type of Grind" required>
+                <option value="N/A">Not Required</option>
                 <option value="C">Chrome</option>
                 <option value="G">Grind</option>
                 <option value="J">Jig</option>
-                <option value="N/A">Not Required</option>
             </select>
+            <label for="grind">Type of Grind </label>
             <br><br>
 
             <input type="text" id="grindInfo" placeholder="Grind Info" required>
@@ -65,6 +70,7 @@
                 <option value="CB">Clean / Bake</option>
                 <option value="RE">Rewind / Epoxy</option>
             </select>
+            <label for="grind">Motor Requirement </label>
             <br><br>
 
             <input type="text" id="motorInfo" placeholder="Motor Info" required>
@@ -75,6 +81,7 @@
                 <option value="Customer">Customer Supplied Parts</option>
                 <option value="Other">Other</option>
             </select>
+            <label for="grind">Parts Required </label>
             <br><br>
 
             <input type="text" id="partsList" placeholder="Parts List?" required>
@@ -87,6 +94,7 @@
             <br><br>
 
             <input type="date" id="estimatedShipDate" placeholder="Estimated Shipping Date?" required>
+            <label for="grind">Estimated Shipping Date </label>
             <br><br>
 
             <input type="checkbox" id="readyToShip" placeholder="Ready to Ship?" required>
