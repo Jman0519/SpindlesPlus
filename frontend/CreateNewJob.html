@@ -14,7 +14,7 @@
     </header>
     <main>
         <section class="cta">
-            
+
             <input type="text" id="customerName" placeholder="Customer Name" required>
             <br>
 
@@ -81,6 +81,10 @@
                     let quotedDate = document.getElementById("quotedDate").value;
                     let approvalDate = document.getElementById("approvalDate").value;
                     let cleaning = document.getElementById("cleaning").checked;
+                    let grind = document.getElementById("grind").checked;
+                    let grindInfo = document.getElementById("grindInfo").value;
+                    let motorRequirements = document.getElementById("motorRequirements").value;
+
                     let newJob = {
                         "customerName": customerName,
                         "receievedDate": receievedDate,
@@ -88,7 +92,10 @@
                         "tearDown": tearDown,
                         "quotedDate": quotedDate,
                         "approvalDate": approvalDate,
-                        "cleaning": cleaning
+                        "cleaning": cleaning,
+                        "grind": grind,
+                        "grindInfo": grindInfo,
+                        "motorRequirements": motorRequirements
                     };
                     console.log(newJob);
                     fetch("http://jaredHerron.tk/addJob", {
