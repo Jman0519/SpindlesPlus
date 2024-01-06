@@ -47,7 +47,7 @@ server.on('request', async (req, res) => {
     else if (url == "/addJob") {
         console.log("need to implement adding a job");
         jobs.append(body);
-        fs.writeFileSync("jobs.json", JSON.stringify(jobs));
+        fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
     }
     else if (url == "/getJobs") {
         console.log("need to implement getting all jobs");
@@ -56,7 +56,7 @@ server.on('request', async (req, res) => {
     }
     else if (url == "/deleteJob") {
         jobs.splice(body.index, 1);
-        fs.writeFileSync("jobs.json", JSON.stringify(jobs));
+        fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
     }
     else if (url == "/editJob") {
         console.log("need to implement editing a job");
