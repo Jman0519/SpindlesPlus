@@ -41,6 +41,10 @@ server.on('request', async (req, res) => {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(fs.readFileSync('frontend/CreateNewJob.html'));
     }
+    else if (url == "/EditJob.html") {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(fs.readFileSync('frontend/EditJob.html'));
+    }
     else if (url == "/favicon.ico") {
         res.writeHead(200, { 'Content-Type': 'image/x-icon' });
         res.end(fs.readFileSync('images/favicon.ico'));
