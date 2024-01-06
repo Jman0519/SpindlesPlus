@@ -26,7 +26,7 @@
             </select>
             <br><br>
 
-            <input type="date" id="receivedDate" placeholder="Receieved Date" required>
+            <input type="date" id="receivedDate" placeholder="Received Date" required>
             <br><br>
 
             <input type="text" id="unit" placeholder="Unit" required>
@@ -96,7 +96,7 @@
                 button.onclick = function () {
                     let customerName = document.getElementById("customerName").value;
                     let incomingShippingContainment = document.getElementById("incomingShippingContainment").value;
-                    let receievedDate = document.getElementById("receievedDate").value;
+                    let receivedDate = document.getElementById("receivedDate").value;
                     let unit = document.getElementById("unit").value;
                     let tearDown = document.getElementById("tearDown").checked;
                     let quotedDate = document.getElementById("quotedDate").value;
@@ -116,7 +116,7 @@
                     let newJob = {
                         "Customer Name": customerName,
                         "Incoming Shipping Containment": incomingShippingContainment,
-                        "Received Date": receievedDate,
+                        "Received Date": receivedDate,
                         "Unit": unit,
                         "Tear Down": tearDown,
                         "Quoted Date": quotedDate,
