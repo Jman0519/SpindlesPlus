@@ -57,6 +57,10 @@ server.on('request', async (req, res) => {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(fs.readFileSync('frontend/CompleteJob.html'));
     }
+    else if (url == "About.html") {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(fs.readFileSync('frontend/About.html'));
+    }
     else if (url == "/style.css") {
         res.writeHead(200, { 'Content-Type': 'text/css' });
         res.end(fs.readFileSync('frontend/style.css'));
