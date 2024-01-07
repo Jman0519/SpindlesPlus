@@ -14,6 +14,7 @@ server = http.createServer();
 server.listen(80);
 
 let newJobsEvent = new EventEmitter();
+newJobsEvent.setMaxListeners(100);
 
 server.on('request', async (req, res) => {
     console.log('\nIncoming Request!!!');
@@ -47,6 +48,14 @@ server.on('request', async (req, res) => {
     else if (url == "/EditJob.html") {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(fs.readFileSync('frontend/EditJob.html'));
+    }
+    else if (url == "/DeleteJob.html") {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(fs.readFileSync('frontend/DeleteJob.html'));
+    }
+    else if (url == "/CloseJob.html") {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(fs.readFileSync('frontend/CloseJob.html'));
     }
     else if (url == "/style.css") {
         res.writeHead(200, { 'Content-Type': 'text/css' });
@@ -92,6 +101,7 @@ server.on('request', async (req, res) => {
         newJobsEvent.emit('newJob');
     }
     else if (url == "/updateJobs") {
+        console.log(newJobsEvent.listenerCount('newJob'));
         newJobsEvent.once('newJob', () => {
             res.writeHead(200, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify(jobs));

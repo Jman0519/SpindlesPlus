@@ -210,14 +210,7 @@
                         return;
                     }
 
-                    fetch("/deleteJob", {
-                        method: "POST",
-                        body: JSON.stringify(job),
-                        headers: {
-                            "Content-Type": "application/json"
-                        }
-                    });
-                    window.location.href = "/";
+                    window.location.href = "/DeleteJob.html";
                 }
             </script>
 
