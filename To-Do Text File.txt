@@ -5,6 +5,13 @@ get a new .tk domain
 password protect
 
 store old/closed jobs somewhere locally on pi possibly
+    completed
+        Customer Name
+        Unit/Part
+        Shipped Date
+        
+        
+
 
 figure out the chrome grind jig hierarchy
 
