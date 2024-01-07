@@ -14,7 +14,7 @@
             <tr>
                 <th>Customer Name</th>
                 <th>Received Date</th>
-                <th>Incoming Shipping Container</th>
+                <th>Container</th>
                 <th>Unit</th>
                 <th>Tear Down</th>
                 <th>Quoted Date</th>
@@ -42,7 +42,7 @@
     <script>
         function createTable(jobs) {
             let table = document.getElementById('data-table');
-            let headers = ["Customer Name", "Received Date", "Incoming Shipping Container", "Unit", "Tear Down", "Quoted Date", "Approval Date", "Cleaning", "Grind Required", "Grind Type", "Grind Info", "Grind Complete", "Motor Requirement", "Motor Info", "Parts Required", "Parts List", "Build", "Test", "Estimated Ship Date", "Ready To Ship"];
+            let headers = ["Customer Name", "Received Date", "Container", "Unit", "Tear Down", "Quoted Date", "Approval Date", "Cleaning", "Grind Required", "Grind Type", "Grind Info", "Grind Complete", "Motor Requirement", "Motor Info", "Parts Required", "Parts List", "Build", "Test", "Estimated Ship Date", "Ready To Ship"];
             //create rows
             let rows = [];
             for (let i = 0; i < jobs.length; i++) {
@@ -62,7 +62,13 @@
                         text = "";
                     }
 
-                    cell.textContent = text;
+                    // cell.textContent = text;
+                    let textRows = text.split('\n');
+                    for (let textRow of textRows) {
+                        cell.innerHTML += textRow;
+                        cell.innerHTML += '<br>';
+                    }
+                    cell.innerHTML = cell.innerHTML.slice(0, -4);
                     row.appendChild(cell);
                 }
                 row.onclick = function () {

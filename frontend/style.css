@@ -147,6 +147,7 @@ a:hover {
 #data-table th {
     background-color: #333;
     color: #fff;
+    height: 50px;
 }
 
 #data-table tr:hover {

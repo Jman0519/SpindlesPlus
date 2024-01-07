@@ -16,7 +16,7 @@ Clear from the job board after this has been submitted -->
 
 <body>
     <header>
-        <h1>Complete Job</h1>
+        <h1 id="jobHeader">Complete Job</h1>
     </header>
     <main>
         <section class="cta">
@@ -50,6 +50,12 @@ Clear from the job board after this has been submitted -->
 
             <button id="cancel" type="submit">Cancel</button>
             <button id="completeJob" type="submit" style="background-color: orange;">Complete Job</button>
+
+            <script>
+                let jobHeader = document.getElementById("jobHeader");
+                let job = JSON.parse(window.localStorage.getItem("job"));
+                jobHeader.innerHTML = "Complete " + job["Customer Name"] + " Job";
+            </script>
 
             <script>
                 function confirm(string) {

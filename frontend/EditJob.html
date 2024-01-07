@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <h1>Edit Job Below</h1>
+        <h1 id="jobHeader">Edit Job Below</h1>
     </header>
     <main>
         <section class="cta">
@@ -20,8 +20,8 @@
             </div>
 
             <div class="input-group">
-                <label for="incomingShippingContainer">Incoming Shipping Container </label>
-                <select id="incomingShippingContainer" placeholder="Incoming Shipping Container" required>
+                <label for="incomingShippingContainer">Container </label>
+                <select id="incomingShippingContainer" placeholder="Container" required>
                     <option value="C">Crate</option>
                     <option value="S">Skid</option>
                     <option value="CB">Cardboard Box</option>
@@ -165,6 +165,12 @@
             <button id="deleteJob" type="submit" style="background-color: red;">Delete Job</button>
 
             <script>
+                let jobHeader = document.getElementById("jobHeader");
+                let job = JSON.parse(window.localStorage.getItem("job"));
+                jobHeader.innerHTML = "Edit " + job["Customer Name"] + " Job";
+            </script>
+
+            <script>
                 function confirm(string) {
                     var userInput = prompt("Type the following to confirm: " + string);
 
@@ -204,7 +210,7 @@
                 let index = -1;
 
                 document.getElementById("customerName").value = job["Customer Name"];
-                document.getElementById("incomingShippingContainer").value = job["Incoming Shipping Container"];
+                document.getElementById("incomingShippingContainer").value = job["Container"];
                 document.getElementById("receivedDate").value = job["Received Date"];
                 document.getElementById("unit").value = job["Unit"];
                 if (job["Tear Down"] === "Y") {
@@ -262,7 +268,7 @@
 
                     let newJob = {
                         "Customer Name": customerName,
-                        "Incoming Shipping Container": incomingShippingContainer,
+                        "Container": incomingShippingContainer,
                         "Received Date": receivedDate,
                         "Unit": unit,
                         "Tear Down": tearDown,

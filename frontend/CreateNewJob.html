@@ -20,8 +20,8 @@
             </div>
 
             <div class="input-group">
-                <label for="incomingShippingContainer">Incoming Shipping Container </label>
-                <select id="incomingShippingContainer" placeholder="Incoming Shipping Container" required>
+                <label for="incomingShippingContainer">Container </label>
+                <select id="incomingShippingContainer" placeholder="Container" required>
                     <option value="C">Crate</option>
                     <option value="S">Skid</option>
                     <option value="CB">Cardboard Box</option>
@@ -191,7 +191,7 @@
 
                     let newJob = {
                         "Customer Name": customerName,
-                        "Incoming Shipping Container": incomingShippingContainer,
+                        "Container": incomingShippingContainer,
                         "Received Date": receivedDate,
                         "Unit": unit,
                         "Tear Down": tearDown,
