@@ -77,8 +77,17 @@ server.on('request', async (req, res) => {
         fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
     }
     else if (url == "/editJob") {
-        console.log("need to implement editing a job");
         jobs[body.uuid] = body;
+        fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
+        newJobsEvent.emit('newJob');
+    }
+    else if (url == "/closeJob") {
+        delete jobs[body.uuid];
+        fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
+        newJobsEvent.emit('newJob');
+    }
+    else if (url == "/deleteJob") {
+        delete jobs[body.uuid];
         fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
         newJobsEvent.emit('newJob');
     }

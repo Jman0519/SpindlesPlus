@@ -159,10 +159,67 @@
 
 
 
-            <button id="submitNewJob" type="submit">Submit New Job</button>
+            <button id="submitEdit" type="submit" style="background-color: green;">Submit Edit</button>
+            <button id="cancelEdit" type="submit">Cancel</button>
+            <button id="closeJob" type="submit" style="background-color: orange;">Close Job</button>
+            <button id=" deleteJob" type="submit" style="background-color: red;">Delete Job</button>
 
+            <script>
+                function confirm(string) {
+                    var userInput = prompt("Type the following to confirm: " + string);
 
+                    if (userInput === string) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            </script>
 
+            <script>
+                let cancelButton = document.getElementById("cancelEdit");
+                cancelButton.onclick = function () {
+                    window.location.href = "/";
+                }
+            </script>
+
+            <script>
+                let closeJobButton = document.getElementById("closeJob");
+                closeJobButton.onclick = function () {
+                    let job = JSON.parse(window.localStorage.getItem("job"));
+                    if (confirm(job["Customer Name"]) == false) {
+                        return;
+                    }
+
+                    fetch("/closeJob", {
+                        method: "POST",
+                        body: JSON.stringify(job),
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    });
+                    window.location.href = "/";
+                }
+            </script>
+
+            <script>
+                let deleteJobButton = document.getElementById("deleteJob");
+                deleteJobButton.onclick = function () {
+                    let job = JSON.parse(window.localStorage.getItem("job"));
+                    if (confirm(job["Customer Name"]) == false) {
+                        return;
+                    }
+
+                    fetch("/deleteJob", {
+                        method: "POST",
+                        body: JSON.stringify(job),
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    });
+                    window.location.href = "/";
+                }
+            </script>
 
             <script>
                 job = JSON.parse(window.localStorage.getItem("job"));
@@ -198,8 +255,12 @@
                 document.getElementById("estimatedShipDate").value = job["Estimated Ship Date"];
                 document.getElementById("readyToShip").value = job["Ready To Ship"];
 
-                let button = document.getElementById("submitNewJob");
+                let button = document.getElementById("submitEdit");
                 button.onclick = async function () {
+                    if (confirm(job["Customer Name"]) == false) {
+                        return;
+                    }
+
                     let customerName = document.getElementById("customerName").value;
                     let incomingShippingContainer = document.getElementById("incomingShippingContainer").value;
                     let receivedDate = document.getElementById("receivedDate").value;
