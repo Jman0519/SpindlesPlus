@@ -23,7 +23,7 @@
         "uuid": 1704645747817,
         "Shipped": "N",
         "Shipping Company": "sdf",
-        "Notified": "N",
+        "Customer Notified": "N",
         "Date": "2024-01-07"
     },
     "1704645828425": {
@@ -50,7 +50,34 @@
         "uuid": 1704645828425,
         "Shipped": "N",
         "Shipping Company": "sdf",
-        "Notified": "N",
+        "Customer Notified": "N",
         "Date": "2024-01-07"
+    },
+    "1704650288980": {
+        "Customer Name": "Nick LLC",
+        "Container": "C",
+        "Received Date": "2024-01-07",
+        "Unit": "TA-55",
+        "Tear Down": "Y",
+        "Quoted Date": "2024-01-08",
+        "Approval Date": "2024-01-10",
+        "Cleaning": "Y",
+        "Grind Required": "Y",
+        "Grind Type": "C",
+        "Grind Info": "10/1000\nNation",
+        "Grind Complete": "Y",
+        "Motor Requirement": "CB",
+        "Motor Info": "500W",
+        "Parts Required": "SPI",
+        "Parts List": "IYRTUIU\nI459845",
+        "Build": "Hass",
+        "Test": "Bench Complete",
+        "Estimated Ship Date": "2024-01-20",
+        "Ready To Ship": "Y",
+        "uuid": 1704650288980,
+        "Shipped": "Y",
+        "Shipping Company": "FEDEX",
+        "Customer Notified": "Y",
+        "Date": "2024-01-03"
     }
 }

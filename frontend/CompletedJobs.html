@@ -42,7 +42,7 @@
     <script>
         function createTable(jobs) {
             let table = document.getElementById('data-table');
-            let headers = ["Customer Name", "Received Date", "Container", "Unit", "Tear Down", "Quoted Date", "Approval Date", "Cleaning", "Grind Required", "Grind Type", "Grind Info", "Grind Complete", "Motor Requirement", "Motor Info", "Parts Required", "Parts List", "Build", "Test", "Estimated Ship Date", "Ready To Ship"];
+            let headers = ["Customer Name", "Received Date", "Unit", "Build", "Test", "Estimated Ship Date", "Shipped", "Shipping Company", "Customer Notified", "Date"];//chnage notifed to customer notified
             //create rows
             let rows = [];
             for (let i = 0; i < jobs.length; i++) {
@@ -52,7 +52,7 @@
 
                     let text = jobs[i][header];
 
-                    if (header == "Received Date" || header == "Quoted Date" || header == "Approval Date" || header == "Estimated Ship Date") {
+                    if (header == "Received Date" || header == "Quoted Date" || header == "Approval Date" || header == "Estimated Ship Date" || header == "Date") {
                         //change from yyyy-mm-dd to mm/dd/yy
                         text = text.split('-');
                         text = text[1] + '/' + text[2] + '/' + text[0].slice(-2);

@@ -16,12 +16,12 @@
         <section class="cta">
             <div class="input-group">
                 <label for="customerName">Customer Name </label>
-                <input type="text" id="customerName" placeholder="Customer Name" required>
+                <input type="text" id="customerName" placeholder="Customer Name" required disabled>
             </div>
 
             <div class="input-group">
                 <label for="incomingShippingContainer">Container </label>
-                <select id="incomingShippingContainer" placeholder="Container" required>
+                <select id="incomingShippingContainer" placeholder="Container" required disabled>
                     <option value="C">Crate</option>
                     <option value="S">Skid</option>
                     <option value="CB">Cardboard Box</option>
@@ -31,18 +31,19 @@
 
             <div class="input-group">
                 <label for="receivedDate">Received Date </label>
-                <input type="date" class="default-today" id="receivedDate" placeholder="Received Date" required>
+                <input type="date" class="default-today" id="receivedDate" placeholder="Received Date" required
+                    disabled>
             </div>
 
             <div class="input-group">
                 <label for="unit">Unit/Part </label>
-                <input type="text" id="unit" placeholder="Unit" required>
+                <input type="text" id="unit" placeholder="Unit" required disabled>
             </div>
             <hr>
 
             <div class="input-group">
                 <label for="tearDown">Tear Down Required? </label>
-                <select id="tearDown" placeholder="Tear Down Required?" required>
+                <select id="tearDown" placeholder="Tear Down Required?" required disabled>
                     <option value="" selected>Select an option</option>
                     <option value="Y">Yes</option>
                     <option value="N">No</option>
@@ -51,18 +52,18 @@
 
             <div class="input-group">
                 <label for="quotedDate">Customer Quoted Date </label>
-                <input type="date" id="quotedDate" placeholder="Customer Quoted Date" required>
+                <input type="date" id="quotedDate" placeholder="Customer Quoted Date" required disabled>
             </div>
 
             <div class="input-group">
                 <label for="approvalDate">Customer Approval Date </label>
-                <input type="date" id="approvalDate" placeholder="Customer Approval Date" required>
+                <input type="date" id="approvalDate" placeholder="Customer Approval Date" required disabled>
             </div>
             <hr>
 
             <div class="input-group">
                 <label for="cleaning">Cleaning Complete? </label>
-                <select id="cleaning" placeholder="Cleaning Complete?" required>
+                <select id="cleaning" placeholder="Cleaning Complete?" required disabled>
                     <option value="" selected>Select an option</option>
                     <option value="Y">Yes</option>
                     <option value="N">No</option>
@@ -71,7 +72,7 @@
 
             <div class="input-group">
                 <label for="grindRequired">Grind Required? </label>
-                <select id="grindRequired" placeholder="Grind Required?" required>
+                <select id="grindRequired" placeholder="Grind Required?" required disabled>
                     <option value="" selected>Select an option</option>
                     <option value="Y">Yes</option>
                     <option value="N">No</option>
@@ -80,7 +81,7 @@
 
             <div class="input-group">
                 <label for="grindType">Type of Grind </label>
-                <select id="grindType" placeholder="Type of Grind" required>
+                <select id="grindType" placeholder="Type of Grind" required disabled>
                     <option value="" selected>Select an option</option>
                     <option value="C">Chrome</option>
                     <option value="G">Grind</option>
@@ -91,12 +92,12 @@
 
             <div class="input-group">
                 <label for="grindInfo">Grind Info</label>
-                <textarea id="grindInfo" placeholder="Grind Info" required></textarea>
+                <textarea id="grindInfo" placeholder="Grind Info" required disabled></textarea>
             </div>
 
             <div class="input-group">
                 <label for="grindComplete">Grind Complete? </label>
-                <select id="grindComplete" placeholder="Grind Complete?" required>
+                <select id="grindComplete" placeholder="Grind Complete?" required disabled>
                     <option value="" selected>Select an option</option>
                     <option value="Y">Yes</option>
                     <option value="N">No</option>
@@ -106,7 +107,7 @@
 
             <div class="input-group">
                 <label for="motorRequirement">Motor Requirement </label>
-                <select id="motorRequirement" placeholder="Motor Requirement" required>
+                <select id="motorRequirement" placeholder="Motor Requirement" required disabled>
                     <option value="CB">Clean / Bake</option>
                     <option value="RE">Rewind / Epoxy</option>
                 </select>
@@ -114,13 +115,13 @@
 
             <div class="input-group">
                 <label for="motorInfo">Motor Info </label>
-                <input type="text" id="motorInfo" placeholder="Motor Info" required>
+                <input type="text" id="motorInfo" placeholder="Motor Info" required disabled>
             </div>
             <hr>
 
             <div class="input-group">
                 <label for="partsRequired">Parts Required </label>
-                <select id="partsRequired" placeholder="Parts Required?" required>
+                <select id="partsRequired" placeholder="Parts Required?" required disabled>
                     <option value="SPI">Spindles Plus Parts</option>
                     <option value="Customer">Customer Supplied Parts</option>
                     <option value="Other">Other</option>
@@ -129,28 +130,28 @@
 
             <div class="input-group">
                 <label for="partsList">Parts List </label>
-                <textarea id="partsList" placeholder="Parts List" required></textarea>
+                <textarea id="partsList" placeholder="Parts List" required disabled></textarea>
             </div>
 
             <div class="input-group">
                 <label for="partBuild">Build Info </label>
-                <input type="text" id="partBuild" placeholder="Build Info" required>
+                <input type="text" id="partBuild" placeholder="Build Info" required disabled>
             </div>
 
             <div class="input-group">
                 <label for="partTest">Test Info </label>
-                <textarea id="partTest" placeholder="Test Info" required></textarea>
+                <textarea id="partTest" placeholder="Test Info" required disabled></textarea>
             </div>
             <hr>
 
             <div class="input-group">
                 <label for="estimatedShipDate">Estimated Shipping Date </label>
-                <input type="date" id="estimatedShipDate" placeholder="Estimated Shipping Date?" required>
+                <input type="date" id="estimatedShipDate" placeholder="Estimated Shipping Date?" required disabled>
             </div>
 
             <div class="input-group">
                 <label for="readyToShip">Ready To Ship? </label>
-                <select id="readyToShip" placeholder="Ready to Ship?" required>
+                <select id="readyToShip" placeholder="Ready to Ship?" required disabled>
                     <option value="" selected>Select an option</option>
                     <option value="Y">Yes</option>
                     <option value="N">No</option>
@@ -158,6 +159,31 @@
             </div>
 
             <!-- add additional fields here -->
+            <hr>
+
+            <div class="input-group">
+                <label for="reason">Reason</label>
+                <textarea id="reason" placeholder="Reason" required disabled></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="date">Date</label>
+                <input type="date" class="default-today" id="date" placeholder="Received Date" required disabled>
+            </div>
+
+            <div class="input-group">
+                <label for="employeeName">Employee Name</label>
+                <input type="text" id="employeeName" placeholder="First and Last Name" required disabled>
+            </div>
+
+            <div class="input-group">
+                <label for="notified">Have Mike and Jenifer Been Notified?</label>
+                <select id="notified" placeholder="Tear Down Required?" required disabled>
+                    <option value="" selected disabled>Select an option</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
 
             <button id="back" type="submit">Go Back</button>
 
@@ -182,16 +208,7 @@
                 document.getElementById("incomingShippingContainer").value = job["Container"];
                 document.getElementById("receivedDate").value = job["Received Date"];
                 document.getElementById("unit").value = job["Unit"];
-                if (job["Tear Down"] === "Y") {
-                    index = 1;
-                }
-                else if (job["Tear Down"] === "N") {
-                    index = 2;
-                }
-                else {
-                    index = 0;
-                }
-                document.getElementById("tearDown").selectedIndex = index;
+                document.getElementById("tearDown").value = job["Tear Down"];
                 document.getElementById("quotedDate").value = job["Quoted Date"];
                 document.getElementById("approvalDate").value = job["Approval Date"];
                 document.getElementById("cleaning").value = job["Cleaning"];
@@ -209,6 +226,10 @@
                 document.getElementById("readyToShip").value = job["Ready To Ship"];
 
                 // fill out additional fields here
+                document.getElementById("reason").value = job["Reason"];
+                document.getElementById("date").value = job["Date"];
+                document.getElementById("employeeName").value = job["Employee Name"];
+                document.getElementById("notified").value = job["Mike and Jenifer Notified"];
             </script>
     </main>
     <footer>

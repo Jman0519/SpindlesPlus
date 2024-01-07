@@ -44,7 +44,7 @@ Clear from the job board after this has been submitted -->
                 </select>
             </div>
 
-            <button id="cancel" type="submit">Cancel</button>
+            <button id="back" type="submit">Go Back</button>
             <button id="cancelJob" type="submit" style="background-color: red;">Cancel Job</button>
 
             <script>
@@ -66,8 +66,8 @@ Clear from the job board after this has been submitted -->
             </script>
 
             <script>
-                let cancelButton = document.getElementById("cancel");
-                cancelButton.onclick = function () {
+                let backButton = document.getElementById("back");
+                backButton.onclick = function () {
                     window.location.href = "/EditJob.html";
                 }
             </script>
@@ -83,7 +83,7 @@ Clear from the job board after this has been submitted -->
                     job["Reason"] = document.getElementById("reason").value;
                     job["Date"] = document.getElementById("date").value;
                     job["Employee Name"] = document.getElementById("employeeName").value;
-                    job["Notified"] = document.getElementById("notified").value;
+                    job["Mike and Jenifer Notified"] = document.getElementById("notified").value;
 
                     fetch("/cancelJob", {
                         method: "POST",

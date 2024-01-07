@@ -214,16 +214,7 @@
                 document.getElementById("incomingShippingContainer").value = job["Container"];
                 document.getElementById("receivedDate").value = job["Received Date"];
                 document.getElementById("unit").value = job["Unit"];
-                if (job["Tear Down"] === "Y") {
-                    index = 1;
-                }
-                else if (job["Tear Down"] === "N") {
-                    index = 2;
-                }
-                else {
-                    index = 0;
-                }
-                document.getElementById("tearDown").selectedIndex = index;
+                document.getElementById("tearDown").value = job["Tear Down"];
                 document.getElementById("quotedDate").value = job["Quoted Date"];
                 document.getElementById("approvalDate").value = job["Approval Date"];
                 document.getElementById("cleaning").value = job["Cleaning"];
