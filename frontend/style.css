@@ -191,3 +191,9 @@ td:first-child {
 .copyright-info {
     float: right;
 }
+
+.centered-link {
+    display: inline-block;
+    text-align: center;
+    width: 100%; /* Optional: Expand the link to take the entire width */
+}
