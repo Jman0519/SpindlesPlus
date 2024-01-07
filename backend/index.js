@@ -53,9 +53,9 @@ server.on('request', async (req, res) => {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(fs.readFileSync('frontend/DeleteJob.html'));
     }
-    else if (url == "/CloseJob.html") {
+    else if (url == "/CompleteJob.html") {
         res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(fs.readFileSync('frontend/CloseJob.html'));
+        res.end(fs.readFileSync('frontend/CompleteJob.html'));
     }
     else if (url == "/style.css") {
         res.writeHead(200, { 'Content-Type': 'text/css' });
@@ -90,7 +90,7 @@ server.on('request', async (req, res) => {
         fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
         newJobsEvent.emit('newJob');
     }
-    else if (url == "/closeJob") {
+    else if (url == "/completeJob") {
         delete jobs[body.uuid];
         fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
         newJobsEvent.emit('newJob');
