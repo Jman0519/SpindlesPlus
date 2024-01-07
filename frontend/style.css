@@ -16,7 +16,7 @@ header {
 }
 
 header nav {
-    float: center;
+    text-align: center;
 }
 
 header img {
