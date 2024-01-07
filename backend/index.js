@@ -81,10 +81,6 @@ server.on('request', async (req, res) => {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify(jobs));
     }
-    else if (url == "/deleteJob") {
-        delete jobs[body.uuid];
-        fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
-    }
     else if (url == "/editJob") {
         jobs[body.uuid] = body;
         fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
@@ -94,11 +90,17 @@ server.on('request', async (req, res) => {
         delete jobs[body.uuid];
         fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
         newJobsEvent.emit('newJob');
+        let completedJobs = JSON.parse(fs.readFileSync("./backend/completedJobs.json"));
+        completedJobs[body.uuid] = body;
+        fs.writeFileSync("./backend/completedJobs.json", JSON.stringify(completedJobs));
     }
     else if (url == "/deleteJob") {
         delete jobs[body.uuid];
         fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
         newJobsEvent.emit('newJob');
+        let deletedJobs = JSON.parse(fs.readFileSync("./backend/deletedJobs.json"));
+        deletedJobs[body.uuid] = body;
+        fs.writeFileSync("./backend/deletedJobs.json", JSON.stringify(deletedJobs));
     }
     else if (url == "/updateJobs") {
         console.log(newJobsEvent.listenerCount('newJob'));

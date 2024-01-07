@@ -80,6 +80,11 @@ Clear from the job board after this has been submitted -->
                         return;
                     }
 
+                    job["Reason"] = document.getElementById("reason").value;
+                    job["Date"] = document.getElementById("date").value;
+                    job["Employee Name"] = document.getElementById("employeeName").value;
+                    job["Notified"] = document.getElementById("notified").value;
+
                     fetch("/deleteJob", {
                         method: "POST",
                         body: JSON.stringify(job),

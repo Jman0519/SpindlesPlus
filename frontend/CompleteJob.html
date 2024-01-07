@@ -84,6 +84,11 @@ Clear from the job board after this has been submitted -->
                         return;
                     }
 
+                    job["Shipped"] = document.getElementById("shipped").value;
+                    job["Shipping Company"] = document.getElementById("shippingCompany").value;
+                    job["Notified"] = document.getElementById("notified").value;
+                    job["Date"] = document.getElementById("Date").value;
+
                     fetch("/completeJob", {
                         method: "POST",
                         body: JSON.stringify(job),
