@@ -92,6 +92,19 @@
             for (let i = 0; i < rows.length; i++) {
                 table.appendChild(rows[i]);
             }
+
+            let createNewJobRow = document.createElement('tr');
+            let createNewJobCell = document.createElement('td');
+            createNewJobCell.colSpan = headers.length;
+            createNewJobCell.innerHTML = '<button id="createNewJob">+ Create New Job</button>';
+            createNewJobRow.appendChild(createNewJobCell);
+            table.appendChild(createNewJobRow);
+
+            let createNewJobButton = document.getElementById('createNewJob');
+            createNewJobButton.onclick = function () {
+                window.location.href = '/CreateNewJob.html';
+            };
+            createNewJobButton.style.fontSize = '20px';
         }
 
         async function getData() {
