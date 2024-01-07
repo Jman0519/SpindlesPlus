@@ -206,3 +206,9 @@ td:first-child {
     width: 100%;
     /* Optional: Expand the link to take the entire width */
 }
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
