@@ -184,3 +184,8 @@ td:first-child {
     order: 2;
     /* This moves the copyright text to the far right */
 }
+
+/* Right-align the copyright info */
+.copyright-info {
+    float: right;
+}
