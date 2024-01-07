@@ -157,14 +157,15 @@
                 </select>
             </div>
 
-
-
             <button id="submitNewJob" type="submit">Submit New Job</button>
-
-
-
+            <button id="cancel" type="submit">Cancel</button>
 
             <script>
+                let cancelButton = document.getElementById("cancel");
+                cancelButton.onclick = function () {
+                    window.location.href = "/";
+                }
+
                 let button = document.getElementById("submitNewJob");
                 button.onclick = async function () {
                     let customerName = document.getElementById("customerName").value;

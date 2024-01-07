@@ -35,14 +35,28 @@ p.jobBoard {
     margin: 0px;
 }
 
-main {
-    /* max-width: 800px; */
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 50%;
+@media (min-width: 768px) {
+    main {
+        /* max-width: 800px; */
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        /* max-width: 800px; */
+        margin: 0px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 80%;
+    }
 }
 
 section.cta {
