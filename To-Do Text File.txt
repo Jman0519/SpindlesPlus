@@ -9,7 +9,7 @@ store old/closed jobs somewhere locally on pi possibly
         Customer Name
         Unit/Part
         Shipped Date
-        
+
         
 
 
@@ -26,3 +26,35 @@ ready to ship yes or no
 grind yes or no
 
 header bar shows what job they are editing/deleting/closing
+
+
+
+
+demo on Jan 7th 2024
+
+Date recieved in the first column - stick with the column order she sent
+
+Conner first 4 things - Jenifer will enter some stuff
+
+Sort by column header addition
+
+Motor portion complete addition?? Motor Complete?
+
+Teardowns always happen
+
+Y with green background - N with red background
+
+Tear Down -> Tear Down Complete
+
+Cleaning -> Cleaning Complete
+
+Add a Motor Complete Column (Y/N)
+
+Parts Recieved (Y/N)
+
+Build (Y/N)
+
+Test (Y/N)
+
+
+
