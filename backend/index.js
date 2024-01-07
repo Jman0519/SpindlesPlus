@@ -29,9 +29,13 @@ server.on('request', async (req, res) => {
         console.log('no body');
     }
     else {
-        body = JSON.parse(buffer.toString());
-        console.log('\nbody: ')
-        console.log(JSON.stringify(body));
+        try {
+            body = JSON.parse(buffer.toString());
+            console.log('\nbody: ')
+            console.log(JSON.stringify(body));
+        } catch (err) {
+            console.log(err);
+        }
     }
 
     let url = req.url;
@@ -49,9 +53,9 @@ server.on('request', async (req, res) => {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(fs.readFileSync('frontend/EditJob.html'));
     }
-    else if (url == "/DeleteJob.html") {
+    else if (url == "/CancelJob.html") {
         res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(fs.readFileSync('frontend/DeleteJob.html'));
+        res.end(fs.readFileSync('frontend/CancelJob.html'));
     }
     else if (url == "/CompleteJob.html") {
         res.writeHead(200, { 'Content-Type': 'text/html' });
@@ -93,6 +97,16 @@ server.on('request', async (req, res) => {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify(jobs));
     }
+    else if (url == "/getCanceledJobs") {
+        let canceledJobs = JSON.parse(fs.readFileSync("./backend/canceledJobs.json"));
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(canceledJobs));
+    }
+    else if (url == "/getCompletedJobs") {
+        let completedJobs = JSON.parse(fs.readFileSync("./backend/completedJobs.json"));
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(completedJobs));
+    }
     else if (url == "/editJob") {
         jobs[body.uuid] = body;
         fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
@@ -106,13 +120,13 @@ server.on('request', async (req, res) => {
         completedJobs[body.uuid] = body;
         fs.writeFileSync("./backend/completedJobs.json", JSON.stringify(completedJobs));
     }
-    else if (url == "/deleteJob") {
+    else if (url == "/cancelJob") {
         delete jobs[body.uuid];
         fs.writeFileSync("./backend/jobs.json", JSON.stringify(jobs));
         newJobsEvent.emit('newJob');
-        let deletedJobs = JSON.parse(fs.readFileSync("./backend/deletedJobs.json"));
-        deletedJobs[body.uuid] = body;
-        fs.writeFileSync("./backend/deletedJobs.json", JSON.stringify(deletedJobs));
+        let canceledJobs = JSON.parse(fs.readFileSync("./backend/canceledJobs.json"));
+        canceledJobs[body.uuid] = body;
+        fs.writeFileSync("./backend/canceledJobs.json", JSON.stringify(canceledJobs));
     }
     else if (url == "/updateJobs") {
         console.log(newJobsEvent.listenerCount('newJob'));

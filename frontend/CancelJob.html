@@ -16,7 +16,7 @@ Clear from the job board after this has been submitted -->
 
 <body>
     <header>
-        <h1 id="jobHeader">Delete Job</h1>
+        <h1 id="jobHeader">Cancel Job</h1>
     </header>
     <main>
         <section class="cta">
@@ -45,12 +45,12 @@ Clear from the job board after this has been submitted -->
             </div>
 
             <button id="cancel" type="submit">Cancel</button>
-            <button id="deleteJob" type="submit" style="background-color: red;">Delete Job</button>
+            <button id="cancelJob" type="submit" style="background-color: red;">Cancel Job</button>
 
             <script>
                 let jobHeader = document.getElementById("jobHeader");
                 let job = JSON.parse(window.localStorage.getItem("job"));
-                jobHeader.innerHTML = "Delete <U>" + job["Customer Name"] + "</U> Job";
+                jobHeader.innerHTML = "Cancel <U>" + job["Customer Name"] + "</U> Job";
             </script>
 
             <script>
@@ -73,8 +73,8 @@ Clear from the job board after this has been submitted -->
             </script>
 
             <script>
-                let deleteJobButton = document.getElementById("deleteJob");
-                deleteJobButton.onclick = function () {
+                let cancelJobButton = document.getElementById("cancelJob");
+                cancelJobButton.onclick = function () {
                     let job = JSON.parse(window.localStorage.getItem("job"));
                     if (confirm(job["Customer Name"]) == false) {
                         return;
@@ -85,7 +85,7 @@ Clear from the job board after this has been submitted -->
                     job["Employee Name"] = document.getElementById("employeeName").value;
                     job["Notified"] = document.getElementById("notified").value;
 
-                    fetch("/deleteJob", {
+                    fetch("/cancelJob", {
                         method: "POST",
                         body: JSON.stringify(job),
                         headers: {

@@ -162,7 +162,7 @@
             <button id="submitEdit" type="submit" style="background-color: green;">Submit Edit</button>
             <button id="cancelEdit" type="submit">Cancel</button>
             <button id="completeJob" type="submit" style="background-color: orange;">Complete Job</button>
-            <button id="deleteJob" type="submit" style="background-color: red;">Delete Job</button>
+            <button id="cancelJob" type="submit" style="background-color: red;">Cancel Job</button>
 
             <script>
                 let jobHeader = document.getElementById("jobHeader");
@@ -198,10 +198,10 @@
             </script>
 
             <script>
-                let deleteJobButton = document.getElementById("deleteJob");
-                deleteJobButton.onclick = function () {
+                let cancelJobButton = document.getElementById("cancelJob");
+                cancelJobButton.onclick = function () {
                     let job = JSON.parse(window.localStorage.getItem("job"));
-                    window.location.href = "/DeleteJob.html";
+                    window.location.href = "/CancelJob.html";
                 }
             </script>
 

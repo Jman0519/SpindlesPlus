@@ -108,7 +108,7 @@
         }
 
         async function getData() {
-            let jobs = Object.values(await (await fetch("/getJobs")).json());
+            let jobs = Object.values(await (await fetch("/getCompletedJobs")).json());
             window.localStorage.setItem('jobs', JSON.stringify(jobs));
 
             // TODO: check if the data is any different
