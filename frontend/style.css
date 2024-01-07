@@ -51,11 +51,13 @@ section.cta {
 
 .input-group input,
 .input-group select,
-.input-group checkbox {
+.input-group checkbox,
+.input-group textarea {
     flex: 2;
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
 button {
