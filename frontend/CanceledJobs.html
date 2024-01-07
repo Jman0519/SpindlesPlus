@@ -85,6 +85,13 @@
                         text = "";
                     }
 
+                    if (header == "Customer Name" || header == "Unit" || header == "Grind Info" || header == "Parts List" || header == "Test" || header == "Build") {
+
+                    }
+                    else {
+                        cell.style.textAlign = "center";
+                    }
+
                     // cell.textContent = text;
                     let textRows = text.split('\n');
                     for (let textRow of textRows) {
@@ -106,6 +113,7 @@
             for (let headerName of headers) {
                 let header = document.createElement('th');
                 header.textContent = headerName;
+                header.style.textAlign = "center";
                 headerRow.appendChild(header);
             }
 
