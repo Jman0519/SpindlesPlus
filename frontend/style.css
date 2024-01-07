@@ -192,14 +192,11 @@ td:first-child {
     float: right;
 }
 
-.centered-link {
-    display: inline-block;
+.footer-content {
     text-align: center;
-    width: 100%; /* Optional: Expand the link to take the entire width */
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Make the elements inline-block for independent alignment */
+.footer-content > * {
+    display: inline-block;
 }
