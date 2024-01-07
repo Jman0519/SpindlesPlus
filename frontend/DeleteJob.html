@@ -22,7 +22,7 @@ Clear from the job board after this has been submitted -->
         <section class="cta">
             <div class="input-group">
                 <label for="Reason for Deleteing Job">Reason for Deleting Job</label>
-                <input type="text" id="Reason" placeholder="Reason" required>
+                <textarea id="Reason" placeholder="Reason" required></textarea>
             </div>
 
             <div class="input-group">
@@ -60,7 +60,7 @@ Clear from the job board after this has been submitted -->
             </script>
 
             <script>
-                let cancelButton = document.getElementById("cancelEdit");
+                let cancelButton = document.getElementById("cancel");
                 cancelButton.onclick = function () {
                     window.location.href = "/EditJob.html";
                 }

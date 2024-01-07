@@ -187,10 +187,6 @@
                 let closeJobButton = document.getElementById("closeJob");
                 closeJobButton.onclick = function () {
                     let job = JSON.parse(window.localStorage.getItem("job"));
-                    if (confirm(job["Customer Name"]) == false) {
-                        return;
-                    }
-
                     fetch("/closeJob", {
                         method: "POST",
                         body: JSON.stringify(job),
@@ -206,10 +202,6 @@
                 let deleteJobButton = document.getElementById("deleteJob");
                 deleteJobButton.onclick = function () {
                     let job = JSON.parse(window.localStorage.getItem("job"));
-                    if (confirm(job["Customer Name"]) == false) {
-                        return;
-                    }
-
                     window.location.href = "/DeleteJob.html";
                 }
             </script>
