@@ -9,19 +9,6 @@
 </head>
 
 <body>
-    <header class="jobBoard">
-        <p id="jobBoardHeaderP" class="jobBoard">
-            <span id="jobBoardLinks" class="links">
-                <a href="JobBoard.html">Job Board</a> |
-                <a href="contactUs.html">Contact Us</a> |
-                <a href="about.html">About</a> |
-                <a href="CreateNewJob.html">Create New Job</a> |
-            </span>
-            <span id="jobBoardCopyright" class="copyright">&copy; 2023 Spindles Plus
-                Incorporated</span>
-        </p>
-    </header>
-
     <table id="data-table">
         <thead>
             <tr>
@@ -48,8 +35,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr onclick="window.location.href = window.location.hostname + '/EditJob.html'">
-            </tr>
+            <tr></tr>
         </tbody>
     </table>
 
@@ -71,10 +57,6 @@
                         text = text.split('-');
                         text = text[1] + '/' + text[2] + '/' + text[0].slice(-2);
                     }
-                    if (header == "Tear Down" || header == "Cleaning" || header == "Grind Required" || header == "Grind Complete" || header == "Ready To Ship") {
-                        //change from true/false to yes/no
-                        text = text ? "Yes" : "No";
-                    }
 
                     if (jobs[i][header] === undefined || jobs[i][header] === "") {
                         text = "";
@@ -84,6 +66,7 @@
                     row.appendChild(cell);
                 }
                 row.onclick = function () {
+                    window.localStorage.setItem('job', JSON.stringify(jobs[i]));
                     window.location.href = '/EditJob.html';
                 };
                 rows.push(row);
@@ -107,6 +90,7 @@
 
         async function getData() {
             let jobs = Object.values(await (await fetch("/getJobs")).json());
+            window.localStorage.setItem('jobs', JSON.stringify(jobs));
 
             // TODO: check if the data is any different
             createTable(jobs);
@@ -124,6 +108,7 @@
             <a href="JobBoard.html">Job Board</a> |
             <a href="contactUs.html">Contact Us</a> |
             <a href="about.html">About</a> |
+            <a href="CreateNewJob.html">Create New Job</a> |
         </p>
     </footer>
 </body>

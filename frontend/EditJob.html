@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <h1>Create a New Job Below</h1>
+        <h1>Edit Job Below</h1>
     </header>
     <main>
         <section class="cta">
@@ -165,20 +165,53 @@
 
 
             <script>
+                job = JSON.parse(window.localStorage.getItem("job"));
+                let index = -1;
+
+                document.getElementById("customerName").value = job["Customer Name"];
+                document.getElementById("incomingShippingContainer").value = job["Incoming Shipping Container"];
+                document.getElementById("receivedDate").value = job["Received Date"];
+                document.getElementById("unit").value = job["Unit"];
+                if (job["Tear Down"] === "Y") {
+                    index = 1;
+                }
+                else if (job["Tear Down"] === "N") {
+                    index = 2;
+                }
+                else {
+                    index = 0;
+                }
+                document.getElementById("tearDown").selectedIndex = index;
+                document.getElementById("quotedDate").value = job["Quoted Date"];
+                document.getElementById("approvalDate").value = job["Approval Date"];
+                document.getElementById("cleaning").value = job["Cleaning"];
+                document.getElementById("grindRequired").value = job["Grind Required"];
+                document.getElementById("grindType").value = job["Grind Type"];
+                document.getElementById("grindInfo").value = job["Grind Info"];
+                document.getElementById("grindComplete").value = job["Grind Complete"];
+                document.getElementById("motorRequirement").value = job["Motor Requirement"];
+                document.getElementById("motorInfo").value = job["Motor Info"];
+                document.getElementById("partsRequired").value = job["Parts Required"];
+                document.getElementById("partsList").value = job["Parts List"];
+                document.getElementById("partBuild").value = job["Build"];
+                document.getElementById("partTest").value = job["Test"];
+                document.getElementById("estimatedShipDate").value = job["Estimated Ship Date"];
+                document.getElementById("readyToShip").value = job["Ready To Ship"];
+
                 let button = document.getElementById("submitNewJob");
                 button.onclick = async function () {
                     let customerName = document.getElementById("customerName").value;
                     let incomingShippingContainer = document.getElementById("incomingShippingContainer").value;
                     let receivedDate = document.getElementById("receivedDate").value;
                     let unit = document.getElementById("unit").value;
-                    let tearDown = document.getElementById("tearDown").checked;
+                    let tearDown = document.getElementById("tearDown").value;
                     let quotedDate = document.getElementById("quotedDate").value;
                     let approvalDate = document.getElementById("approvalDate").value;
-                    let cleaning = document.getElementById("cleaning").checked;
-                    let grindRequired = document.getElementById("grindRequired").checked;
+                    let cleaning = document.getElementById("cleaning").value;
+                    let grindRequired = document.getElementById("grindRequired").value;
                     let grindType = document.getElementById("grindType").value;
                     let grindInfo = document.getElementById("grindInfo").value;
-                    let grindComplete = document.getElementById("grindComplete").checked;
+                    let grindComplete = document.getElementById("grindComplete").value;
                     let motorRequirement = document.getElementById("motorRequirement").value;
                     let motorInfo = document.getElementById("motorInfo").value;
                     let partsRequired = document.getElementById("partsRequired").value;
@@ -186,7 +219,7 @@
                     let partBuild = document.getElementById("partBuild").value;
                     let partTest = document.getElementById("partTest").value;
                     let estimatedShipDate = document.getElementById("estimatedShipDate").value;
-                    let readyToShip = document.getElementById("readyToShip").checked;
+                    let readyToShip = document.getElementById("readyToShip").value;
 
                     let newJob = {
                         "Customer Name": customerName,
@@ -208,10 +241,11 @@
                         "Build": partBuild,
                         "Test": partTest,
                         "Estimated Ship Date": estimatedShipDate,
-                        "Ready To Ship": readyToShip
+                        "Ready To Ship": readyToShip,
+                        "uuid": job["uuid"]
                     };
                     console.log(newJob);
-                    fetch("/addJob", {
+                    fetch("/editJob", {
                         method: "POST",
                         body: JSON.stringify(newJob),
                         headers: {
