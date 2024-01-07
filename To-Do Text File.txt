@@ -17,3 +17,5 @@ cleaning yes or no
 ready to ship yes or no
 
 grind yes or no
+
+header bar shows what job they are editing/deleting/closing
