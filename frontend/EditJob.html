@@ -168,7 +168,7 @@
                 function confirm(string) {
                     var userInput = prompt("Type the following to confirm: " + string);
 
-                    if (userInput === string) {
+                    if (userInput.toLowerCase() === string.toLowerCase()) {
                         return true;
                     } else {
                         return false;

@@ -49,13 +49,13 @@ Clear from the job board after this has been submitted -->
             </div>
 
             <button id="cancel" type="submit">Cancel</button>
-            <button id="CompleteJob" type="submit" style="background-color: orange;">Complete Job</button>
+            <button id="completeJob" type="submit" style="background-color: orange;">Complete Job</button>
 
             <script>
                 function confirm(string) {
                     var userInput = prompt("Type the following to confirm: " + string);
 
-                    if (userInput === string) {
+                    if (userInput.toLowerCase() === string.toLowerCase()) {
                         return true;
                     } else {
                         return false;
@@ -71,8 +71,8 @@ Clear from the job board after this has been submitted -->
             </script>
 
             <script>
-                let deleteJobButton = document.getElementById("completeJob");
-                deleteJobButton.onclick = function () {
+                let completeJobButton = document.getElementById("completeJob");
+                completeJobButton.onclick = function () {
                     let job = JSON.parse(window.localStorage.getItem("job"));
                     if (confirm(job["Customer Name"]) == false) {
                         return;
