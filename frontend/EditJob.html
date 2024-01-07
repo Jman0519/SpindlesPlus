@@ -161,14 +161,14 @@
 
             <button id="submitEdit" type="submit" style="background-color: green;">Submit Edit</button>
             <button id="cancelEdit" type="submit">Cancel</button>
-            <button id="closeJob" type="submit" style="background-color: orange;">Close Job</button>
+            <button id="completeJob" type="submit" style="background-color: orange;">Complete Job</button>
             <button id="deleteJob" type="submit" style="background-color: red;">Delete Job</button>
 
             <script>
                 function confirm(string) {
                     var userInput = prompt("Type the following to confirm: " + string);
 
-                    if (userInput === string) {
+                    if (userInput.toLowerCase() === string.toLowerCase()) {
                         return true;
                     } else {
                         return false;
@@ -184,17 +184,10 @@
             </script>
 
             <script>
-                let closeJobButton = document.getElementById("closeJob");
-                closeJobButton.onclick = function () {
+                let completeJobButton = document.getElementById("completeJob");
+                completeJobButton.onclick = function () {
                     let job = JSON.parse(window.localStorage.getItem("job"));
-                    fetch("/closeJob", {
-                        method: "POST",
-                        body: JSON.stringify(job),
-                        headers: {
-                            "Content-Type": "application/json"
-                        }
-                    });
-                    window.location.href = "/";
+                    window.location.href = "/CompleteJob.html";
                 }
             </script>
 
