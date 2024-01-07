@@ -57,7 +57,15 @@ server.on('request', async (req, res) => {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(fs.readFileSync('frontend/CompleteJob.html'));
     }
-    else if (url == "About.html") {
+    else if (url == "CompletedJobs.html") {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(fs.readFileSync('frontend/CompletedJobs.html'));
+    }
+    else if (url == "/CanceledJobs.html") {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(fs.readFileSync('frontend/CanceledJobs.html'));
+    }
+    else if (url == "/About.html") {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(fs.readFileSync('frontend/About.html'));
     }

@@ -144,6 +144,10 @@ a:hover {
     text-align: left;
 }
 
+td:first-child {
+    min-width: 10vw;
+}
+
 #data-table th {
     background-color: #333;
     color: #fff;
