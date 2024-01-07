@@ -54,7 +54,7 @@ Clear from the job board after this has been submitted -->
             <script>
                 let jobHeader = document.getElementById("jobHeader");
                 let job = JSON.parse(window.localStorage.getItem("job"));
-                jobHeader.innerHTML = "Complete " + job["Customer Name"] + " Job";
+                jobHeader.innerHTML = "Complete <U>" + job["Customer Name"] + "</U> Job";
             </script>
 
             <script>

@@ -50,7 +50,7 @@ Clear from the job board after this has been submitted -->
             <script>
                 let jobHeader = document.getElementById("jobHeader");
                 let job = JSON.parse(window.localStorage.getItem("job"));
-                jobHeader.innerHTML = "Delete " + job["Customer Name"] + " Job";
+                jobHeader.innerHTML = "Delete <U>" + job["Customer Name"] + "</U> Job";
             </script>
 
             <script>
