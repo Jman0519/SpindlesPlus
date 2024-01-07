@@ -15,6 +15,14 @@ header {
     text-align: center;
 }
 
+header nav {
+    float: center;
+}
+
+header img {
+    float: left;
+}
+
 footer {
     background-color: #08B5D6;
     color: #fff;
@@ -195,5 +203,6 @@ td:first-child {
 .centered-link {
     display: inline-block;
     text-align: center;
-    width: 100%; /* Optional: Expand the link to take the entire width */
+    width: 100%;
+    /* Optional: Expand the link to take the entire width */
 }
