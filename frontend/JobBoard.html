@@ -66,7 +66,7 @@
     <script>
         function createTable(jobs) {
             let table = document.getElementById('data-table');
-            let headers = ["Customer Name", "Received Date", "Container", "Unit", "Tear Down", "Quoted Date", "Approval Date", "Cleaning", "Grind Required", "Grind Type", "Grind Info", "Grind Complete", "Motor Requirement", "Motor Info", "Parts Required", "Parts List", "Build", "Test", "Estimated Ship Date", "Ready To Ship"];
+            let headers = ["Received Date", "Container", "Customer Name", "Unit", "Tear Down", "Quoted Date", "Approval Date", "Cleaning", "Grind Type", "Grind Info", "Grind Complete", "Motor Requirement", "Motor Info", "Parts Required", "Parts List", "Build", "Test", "Estimated Ship Date", "Ready To Ship"];
             //create rows
             let rows = [];
             for (let i = 0; i < jobs.length; i++) {
@@ -91,6 +91,16 @@
                     }
                     else {
                         cell.style.textAlign = "center";
+                    }
+
+                    if (header == "Grind Required") { }
+                    else {
+                        if (text == "Y") {
+                            cell.style.backgroundColor = "#65ff3b";
+                        }
+                        else if (text == "N") {
+                            cell.style.backgroundColor = "#ff553b";
+                        }
                     }
 
                     // cell.textContent = text;
