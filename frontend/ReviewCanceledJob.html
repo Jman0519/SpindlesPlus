@@ -42,8 +42,8 @@
             <hr>
 
             <div class="input-group">
-                <label for="tearDown">Tear Down Required? </label>
-                <select id="tearDown" placeholder="Tear Down Required?" required disabled>
+                <label for="tearDown">Tear Down Complete? </label>
+                <select id="tearDown" placeholder="Tear Down Complete?" required disabled>
                     <option value="" selected>Select an option</option>
                     <option value="Y">Yes</option>
                     <option value="N">No</option>
@@ -62,8 +62,8 @@
             <hr>
 
             <div class="input-group">
-                <label for="cleaning">Cleaning Complete? </label>
-                <select id="cleaning" placeholder="Cleaning Complete?" required disabled>
+                <label for="cleaning">Cleaning Complete Complete? </label>
+                <select id="cleaning" placeholder="Cleaning Complete Complete?" required disabled>
                     <option value="" selected>Select an option</option>
                     <option value="Y">Yes</option>
                     <option value="N">No</option>
@@ -178,7 +178,7 @@
 
             <div class="input-group">
                 <label for="notified">Have Mike and Jenifer Been Notified?</label>
-                <select id="notified" placeholder="Tear Down Required?" required disabled>
+                <select id="notified" placeholder="Tear Down Complete?" required disabled>
                     <option value="" selected disabled>Select an option</option>
                     <option value="Y">Yes</option>
                     <option value="N">No</option>
@@ -208,10 +208,10 @@
                 document.getElementById("incomingShippingContainer").value = job["Container"];
                 document.getElementById("receivedDate").value = job["Received Date"];
                 document.getElementById("unit").value = job["Unit"];
-                document.getElementById("tearDown").value = job["Tear Down"];
+                document.getElementById("tearDown").value = job["Tear Down Complete"];
                 document.getElementById("quotedDate").value = job["Quoted Date"];
                 document.getElementById("approvalDate").value = job["Approval Date"];
-                document.getElementById("cleaning").value = job["Cleaning"];
+                document.getElementById("cleaning").value = job["Cleaning Complete"];
                 document.getElementById("grindRequired").value = job["Grind Required"];
                 document.getElementById("grindType").value = job["Grind Type"];
                 document.getElementById("grindInfo").value = job["Grind Info"];
