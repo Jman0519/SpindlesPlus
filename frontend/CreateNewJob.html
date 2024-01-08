@@ -134,13 +134,30 @@
             </div>
 
             <div class="input-group">
+                <label for="partsReceieved">Parts Received? </label>
+                <select id="partsReceieved" placeholder="Parts Received?" required>
+                    <option value="" selected>Select an option</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
+
+            <div class="input-group">
                 <label for="partBuild">Build Info </label>
-                <input type="text" id="partBuild" placeholder="Build Info" required>
+                <select id="partBuild" placeholder="Build Complete?" required>
+                    <option value="" selected>Select an option</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
             </div>
 
             <div class="input-group">
                 <label for="partTest">Test Info </label>
-                <textarea id="partTest" placeholder="Test Info" required></textarea>
+                <select id="partTest" placeholder="Test Complete?" required>
+                    <option value="" selected>Select an option</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
             </div>
             <hr>
 
