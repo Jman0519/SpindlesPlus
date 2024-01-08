@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spindles Plus Internal Job Board</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="jobHeader">Review Job</h1>
+    </header>
+    <main>
+        <section class="cta">
+            <div class="input-group">
+                <label for="customerName">Customer Name </label>
+                <input type="text" id="customerName" placeholder="Customer Name" required disabled>
+            </div>
+
+            <div class="input-group">
+                <label for="incomingShippingContainer">Container </label>
+                <select id="incomingShippingContainer" placeholder="Container" required disabled>
+                    <option value="C">Crate</option>
+                    <option value="S">Skid</option>
+                    <option value="CB">Cardboard Box</option>
+                    <option value="J">Junk</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="receivedDate">Received Date </label>
+                <input type="date" class="default-today" id="receivedDate" placeholder="Received Date" required
+                    disabled>
+            </div>
+
+            <div class="input-group">
+                <label for="unit">Unit/Part </label>
+                <input type="text" id="unit" placeholder="Unit" required disabled>
+            </div>
+            <hr>
+
+            <div class="input-group">
+                <label for="tearDown">Tear Down Complete? </label>
+                <select id="tearDown" placeholder="Tear Down Complete?" required disabled>
+                    <option value="" selected>Select an option</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="quotedDate">Customer Quoted Date </label>
+                <input type="date" id="quotedDate" placeholder="Customer Quoted Date" required disabled>
+            </div>
+
+            <div class="input-group">
+                <label for="approvalDate">Customer Approval Date </label>
+                <input type="date" id="approvalDate" placeholder="Customer Approval Date" required disabled>
+            </div>
+            <hr>
+
+            <div class="input-group">
+                <label for="cleaning">Cleaning Complete Complete? </label>
+                <select id="cleaning" placeholder="Cleaning Complete Complete?" required disabled>
+                    <option value="" selected>Select an option</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="grindRequired">Grind Required? </label>
+                <select id="grindRequired" placeholder="Grind Required?" required disabled>
+                    <option value="" selected>Select an option</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="grindType">Type of Grind </label>
+                <select id="grindType" placeholder="Type of Grind" required disabled>
+                    <option value="" selected>Select an option</option>
+                    <option value="C">Chrome</option>
+                    <option value="G">Grind</option>
+                    <option value="J">Jig</option>
+                    <option value="N/A">Not Required</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="grindInfo">Grind Info</label>
+                <textarea id="grindInfo" placeholder="Grind Info" required disabled></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="grindComplete">Grind Complete? </label>
+                <select id="grindComplete" placeholder="Grind Complete?" required disabled>
+                    <option value="" selected>Select an option</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
+            <hr>
+
+            <div class="input-group">
+                <label for="motorRequirement">Motor Requirement </label>
+                <select id="motorRequirement" placeholder="Motor Requirement" required disabled>
+                    <option value="CB">Clean / Bake</option>
+                    <option value="RE">Rewind / Epoxy</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="motorInfo">Motor Info </label>
+                <input type="text" id="motorInfo" placeholder="Motor Info" required disabled>
+            </div>
+            <hr>
+
+            <div class="input-group">
+                <label for="partsRequired">Parts Required </label>
+                <select id="partsRequired" placeholder="Parts Required?" required disabled>
+                    <option value="SPI">Spindles Plus Parts</option>
+                    <option value="Customer">Customer Supplied Parts</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="partsList">Parts List </label>
+                <textarea id="partsList" placeholder="Parts List" required disabled></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="partBuild">Build Info </label>
+                <input type="text" id="partBuild" placeholder="Build Info" required disabled>
+            </div>
+
+            <div class="input-group">
+                <label for="partTest">Test Info </label>
+                <textarea id="partTest" placeholder="Test Info" required disabled></textarea>
+            </div>
+            <hr>
+
+            <div class="input-group">
+                <label for="estimatedShipDate">Estimated Shipping Date </label>
+                <input type="date" id="estimatedShipDate" placeholder="Estimated Shipping Date?" required disabled>
+            </div>
+
+            <div class="input-group">
+                <label for="readyToShip">Ready To Ship? </label>
+                <select id="readyToShip" placeholder="Ready to Ship?" required disabled>
+                    <option value="" selected>Select an option</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
+
+            <!-- add additional fields here -->
+            <hr>
+
+            <div class="input-group">
+                <label for="reason">Reason</label>
+                <textarea id="reason" placeholder="Reason" required disabled></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="date">Date</label>
+                <input type="date" class="default-today" id="date" placeholder="Received Date" required disabled>
+            </div>
+
+            <div class="input-group">
+                <label for="employeeName">Employee Name</label>
+                <input type="text" id="employeeName" placeholder="First and Last Name" required disabled>
+            </div>
+
+            <div class="input-group">
+                <label for="notified">Have Mike and Jenifer Been Notified?</label>
+                <select id="notified" placeholder="Tear Down Complete?" required disabled>
+                    <option value="" selected disabled>Select an option</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
+
+            <button id="back" type="submit">Go Back</button>
+
+            <script>
+                let jobHeader = document.getElementById("jobHeader");
+                let job = JSON.parse(window.localStorage.getItem("job"));
+                jobHeader.innerHTML = "Review <U>" + job["Customer Name"] + "</U> Job";
+            </script>
+
+            <script>
+                let backButton = document.getElementById("back");
+                backButton.onclick = function () {
+                    window.location.href = "/CanceledJobs.html";
+                }
+            </script>
+
+            <script>
+                job = JSON.parse(window.localStorage.getItem("job"));
+                let index = -1;
+
+                document.getElementById("customerName").value = job["Customer Name"];
+                document.getElementById("incomingShippingContainer").value = job["Container"];
+                document.getElementById("receivedDate").value = job["Received Date"];
+                document.getElementById("unit").value = job["Unit"];
+                document.getElementById("tearDown").value = job["Tear Down Complete"];
+                document.getElementById("quotedDate").value = job["Quoted Date"];
+                document.getElementById("approvalDate").value = job["Approval Date"];
+                document.getElementById("cleaning").value = job["Cleaning Complete"];
+                document.getElementById("grindRequired").value = job["Grind Required"];
+                document.getElementById("grindType").value = job["Grind Type"];
+                document.getElementById("grindInfo").value = job["Grind Info"];
+                document.getElementById("grindComplete").value = job["Grind Complete"];
+                document.getElementById("motorRequirement").value = job["Motor Requirement"];
+                document.getElementById("motorInfo").value = job["Motor Info"];
+                document.getElementById("partsRequired").value = job["Parts Required"];
+                document.getElementById("partsList").value = job["Parts List"];
+                document.getElementById("partBuild").value = job["Build"];
+                document.getElementById("partTest").value = job["Test"];
+                document.getElementById("estimatedShipDate").value = job["Estimated Ship Date"];
+                document.getElementById("readyToShip").value = job["Ready To Ship"];
+
+                // fill out additional fields here
+                document.getElementById("reason").value = job["Reason"];
+                document.getElementById("date").value = job["Date"];
+                document.getElementById("employeeName").value = job["Employee Name"];
+                document.getElementById("notified").value = job["Mike and Jenifer Notified"];
+            </script>
+    </main>
+    <footer>
+        <table style="width: 100%; height: 50px;">
+            <tr>
+                <td style="width: 30%;">
+
+                </td>
+                <td style="width: 40%; text-align: center;">
+                    <a href="About.html" class="centered-link">About</a>
+                </td>
+                <td style="width: 30%;">
+                    <span class="copyright-info">&copy; 2023 Spindles Plus Incorporated | All Rights Reserved </span>
+                </td>
+            </tr>
+        </table>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!-- ask basic questions like
+
+reason - date - employee - Mike/Jenifer notified
+
+Clear from the job board after this has been submitted -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spindles Plus Internal Job Board</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="jobHeader">Edit Job Below</h1>
+    </header>
+
+    <main>
+        <section class="cta">
+            <div class="input-group">
+                <label for="reason">Reason for Canceling Job</label>
+                <textarea id="reason" placeholder="Reason" required></textarea>
+            </div>
+
+            <div class="input-group">
+                <label for="date">Date</label>
+                <input type="date" class="default-today" id="date" placeholder="Received Date" required>
+            </div>
+
+            <div class="input-group">
+                <label for="employeeName">Employee Name</label>
+                <input type="text" id="employeeName" placeholder="First and Last Name" required>
+            </div>
+
+            <div class="input-group">
+                <label for="notified">Have Mike and Jenifer Been Notified?</label>
+                <select id="notified" placeholder="Tear Down Complete?" required>
+                    <option value="" selected disabled>Select an option</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
+
+            <button id="back" type="submit">Go Back</button>
+            <button id="cancelJob" type="submit" style="background-color: red;">Cancel Job</button>
+
+            <script>
+                let jobHeader = document.getElementById("jobHeader");
+                let job = JSON.parse(window.localStorage.getItem("job"));
+                jobHeader.innerHTML = "Cancel <U>" + job["Customer Name"] + "</U> Job";
+            </script>
+
+            <script>
+                function confirm(string) {
+                    var userInput = prompt("Type the following to confirm: " + string);
+
+                    if (userInput.toLowerCase() === string.toLowerCase()) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            </script>
+
+            <script>
+                let backButton = document.getElementById("back");
+                backButton.onclick = function () {
+                    window.location.href = "/EditJob.html";
+                }
+            </script>
+
+            <script>
+                let cancelJobButton = document.getElementById("cancelJob");
+                cancelJobButton.onclick = function () {
+                    let job = JSON.parse(window.localStorage.getItem("job"));
+                    if (confirm(job["Customer Name"]) == false) {
+                        return;
+                    }
+
+                    job["Reason"] = document.getElementById("reason").value;
+                    job["Date"] = document.getElementById("date").value;
+                    job["Employee Name"] = document.getElementById("employeeName").value;
+                    job["Mike and Jenifer Notified"] = document.getElementById("notified").value;
+
+                    fetch("/cancelJob", {
+                        method: "POST",
+                        body: JSON.stringify(job),
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    });
+                    window.location.href = "/";
+                }
+            </script>
+
+            <!-- Add this script after your existing script or in the head section -->
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Get today's date in the format "YYYY-MM-DD"
+                    let today = new Date().toISOString().split('T')[0];
+
+                    // Set the default value for date input fields with the class "default-today"
+                    let dateInputs = document.querySelectorAll(".default-today");
+                    dateInputs.forEach(function (input) {
+                        input.value = today;
+                    });
+                });
+            </script>
+        </section>
+    </main>
+    <footer>
+        <table style="width: 100%; height: 50px;">
+            <tr>
+                <td style="width: 30%;">
+
+                </td>
+                <td style="width: 40%; text-align: center;">
+                    <a href="About.html" class="centered-link">About</a>
+                </td>
+                <td style="width: 30%;">
+                    <span class="copyright-info">&copy; 2023 Spindles Plus Incorporated | All Rights Reserved </span>
+                </td>
+            </tr>
+        </table>
+    </footer>
+</body>
+
+</html>

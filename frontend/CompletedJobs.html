@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spindles Plus Internal Job Board</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <table style="width: 100%;">
+            <tr>
+                <td style="width: 20%;">
+                    <img src="/spindles_plus_image.gif" alt="Logo" height="50px" style="width: auto;">
+                </td>
+                <td style="width: 60%; text-align: center;">
+                    <nav>
+                        <button onclick="window.location.href='JobBoard.html'"
+                            style="background-color: rgb(0, 0, 0); margin: 0px 40px; font-size: 20px">Job Board</button>
+                    </nav>
+                </td>
+                <td style="width: 20%;">
+                    <p style="font-size: 30px; margin: 0; color: white;">
+                        <b>Completed Job Board</b>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </header>
+
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Customer Name</th>
+                <th>Received Date</th>
+                <th>Container</th>
+                <th>Unit</th>
+                <th>Tear Down Complete</th>
+                <th>Quoted Date</th>
+                <th>Approval Date</th>
+                <th>Cleaning Complete</th>
+                <th>Grind Required</th>
+                <th>Grind Type</th>
+                <th>Grind Info</th>
+                <th>Grind Complete</th>
+                <th>Motor Requirement</th>
+                <th>Motor Info</th>
+                <th>Parts Required</th>
+                <th>Parts List</th>
+                <th>Build</th>
+                <th>Test</th>
+                <th>Estimated Ship Date</th>
+                <th>Ready To Ship</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr></tr>
+        </tbody>
+    </table>
+
+    <script>
+        function createTable(jobs) {
+            let table = document.getElementById('data-table');
+            let headers = ["Customer Name", "Received Date", "Unit", "Build", "Test", "Estimated Ship Date", "Shipped", "Shipping Company", "Customer Notified", "Date"];//chnage notifed to customer notified
+            //create rows
+            let rows = [];
+            for (let i = 0; i < jobs.length; i++) {
+                let row = document.createElement('tr');
+                for (let header of headers) {
+                    let cell = document.createElement('td');
+
+                    let text = jobs[i][header];
+
+                    if (header == "Received Date" || header == "Quoted Date" || header == "Approval Date" || header == "Estimated Ship Date" || header == "Date") {
+                        //change from yyyy-mm-dd to mm/dd/yy
+                        text = text.split('-');
+                        text = text[1] + '/' + text[2] + '/' + text[0].slice(-2);
+                    }
+
+                    if (jobs[i][header] === undefined || jobs[i][header] === "") {
+                        text = "";
+                    }
+
+                    if (header == "Customer Name" || header == "Unit" || header == "Grind Info" || header == "Parts List" || header == "Test" || header == "Build") {
+
+                    }
+                    else {
+                        cell.style.textAlign = "center";
+                    }
+
+                    // cell.textContent = text;
+                    let textRows = text.split('\n');
+                    for (let textRow of textRows) {
+                        cell.innerHTML += textRow;
+                        cell.innerHTML += '<br>';
+                    }
+                    cell.innerHTML = cell.innerHTML.slice(0, -4);
+                    row.appendChild(cell);
+                }
+                row.onclick = function () {
+                    window.localStorage.setItem('job', JSON.stringify(jobs[i]));
+                    window.location.href = '/ReviewCompletedJob.html';
+                };
+                rows.push(row);
+            }
+
+            //create headers
+            let headerRow = document.createElement('tr');
+            for (let headerName of headers) {
+                let header = document.createElement('th');
+                header.textContent = headerName;
+                header.style.textAlign = "center";
+                headerRow.appendChild(header);
+            }
+
+            // set the table
+            table.innerHTML = '';
+            table.appendChild(headerRow);
+            for (let i = 0; i < rows.length; i++) {
+                table.appendChild(rows[i]);
+            }
+        }
+
+        async function getData() {
+            let jobs = Object.values(await (await fetch("/getCompletedJobs")).json());
+            window.localStorage.setItem('jobs', JSON.stringify(jobs));
+
+            // TODO: check if the data is any different
+            createTable(jobs);
+            let updateJobs = fetch("/updateJobs").then(getData);
+        }
+
+        getData();
+        // setInterval(function () {
+        //     // Call a function repetatively with 2 Second interval
+        //     getData();
+        // }, 10000); //1000mSeconds update rate
+    </script>
+    <footer>
+        <table style="width: 100%; height: 50px;">
+            <tr>
+                <td style="width: 30%;">
+
+                </td>
+                <td style="width: 40%; text-align: center;">
+                    <a href="About.html" class="centered-link">About</a>
+                </td>
+                <td style="width: 30%;">
+                    <span class="copyright-info">&copy; 2023 Spindles Plus Incorporated | All Rights Reserved </span>
+                </td>
+            </tr>
+        </table>
+    </footer>
+</body>
+
+</html>

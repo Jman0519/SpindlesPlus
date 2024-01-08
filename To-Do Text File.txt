@@ -1,0 +1,60 @@
+back to home page after submit new job/edit job or close job
+
+get a new .tk domain
+
+password protect
+
+store old/closed jobs somewhere locally on pi possibly
+    completed
+        Customer Name
+        Unit/Part
+        Shipped Date
+
+        
+
+
+figure out the chrome grind jig hierarchy
+
+oreient all dates so they are  01/05/24 format
+
+Tear Down Complete yes or no
+
+cleaning yes or no
+
+ready to ship yes or no
+
+grind yes or no
+
+header bar shows what job they are editing/deleting/closing
+
+
+
+
+demo on Jan 7th 2024
+
+Date recieved in the first column - stick with the column order she sent
+
+Conner first 4 things - Jenifer will enter some stuff
+
+Sort by column header addition
+
+Motor portion complete addition?? Motor Complete?
+
+Teardowns always happen
+
+Y with green background - N with red background
+
+Tear Down Complete -> Tear Down Complete Complete
+
+Cleaning -> Cleaning Complete
+
+Add a Motor Complete Column (Y/N)
+
+Parts Recieved (Y/N)
+
+Build (Y/N)
+
+Test (Y/N)
+
+
+

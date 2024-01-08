@@ -1,0 +1,208 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #08B5D6;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav {
+    text-align: center;
+}
+
+header img {
+    float: left;
+}
+
+footer {
+    background-color: #08B5D6;
+    color: #fff;
+    padding: 0px;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+header.jobBoard {
+    padding: 10px;
+    margin: 0px;
+}
+
+p.jobBoard {
+    padding: 0;
+    margin: 0px;
+}
+
+@media (min-width: 768px) {
+    main {
+        /* max-width: 800px; */
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        /* max-width: 800px; */
+        margin: 0px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 80%;
+    }
+}
+
+section.cta {
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    flex: 1;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.input-group input,
+.input-group select,
+.input-group checkbox,
+.input-group textarea {
+    flex: 2;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+button {
+    background-color: #08B5D6;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #08B5D6;
+}
+
+section.instructions {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+hr {
+    margin: 20px 0;
+    /* Adjust the top and bottom margin as needed */
+    border: none;
+    height: 2px;
+    /* Adjust the thickness of the line */
+    background-color: #333;
+    /* Adjust the color of the line */
+}
+
+a {
+    color: #fff;
+    /* Change this color to your desired link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* Optional: Add a smooth transition effect */
+}
+
+a:hover {
+    color: #ff9;
+    /* Change this color to your desired link color on hover */
+}
+
+#data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0px;
+}
+
+#data-table th,
+#data-table td {
+    /* border: 1px solid #ddd; */
+    padding: 8px;
+    text-align: left;
+}
+
+#data-table th {
+    background-color: #333;
+    color: #fff;
+    height: 50px;
+    position: sticky;
+    top: 0;
+}
+
+#data-table tr:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+#data-table tr:nth-child(even) {
+    background-color: #d9d9d9;
+    /* Set the background color for even rows */
+}
+
+#data-table tr {
+    border-bottom: 2px solid #000;
+    /* Add a black border to the bottom of each row */
+}
+
+.jobBoard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links {
+    order: 1;
+    /* This moves the links to the far left */
+}
+
+.copyright {
+    order: 2;
+    /* This moves the copyright text to the far right */
+}
+
+/* Right-align the copyright info */
+.copyright-info {
+    float: right;
+}
+
+.footer-content {
+    text-align: center;
+    width: 100%;
+    /* Optional: Expand the link to take the entire width */
+}
+
+/* Make the elements inline-block for independent alignment */
+.footer-content>* {
+    display: inline-block;
+}
