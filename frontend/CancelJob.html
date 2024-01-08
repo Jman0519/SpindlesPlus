@@ -15,10 +15,14 @@ Clear from the job board after this has been submitted -->
 </head>
 
 <body>
+    <header>
+        <h1 id="jobHeader">Edit Job Below</h1>
+    </header>
+
     <main>
         <section class="cta">
             <div class="input-group">
-                <label for="reason">Reason for Deleting Job</label>
+                <label for="reason">Reason for Canceling Job</label>
                 <textarea id="reason" placeholder="Reason" required></textarea>
             </div>
 
@@ -34,7 +38,7 @@ Clear from the job board after this has been submitted -->
 
             <div class="input-group">
                 <label for="notified">Have Mike and Jenifer Been Notified?</label>
-                <select id="notified" placeholder="Tear Down Required?" required>
+                <select id="notified" placeholder="Tear Down Complete?" required>
                     <option value="" selected disabled>Select an option</option>
                     <option value="Y">Yes</option>
                     <option value="N">No</option>

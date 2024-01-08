@@ -17,7 +17,7 @@ figure out the chrome grind jig hierarchy
 
 oreient all dates so they are  01/05/24 format
 
-Tear Down yes or no
+Tear Down Complete yes or no
 
 cleaning yes or no
 
@@ -44,7 +44,7 @@ Teardowns always happen
 
 Y with green background - N with red background
 
-Tear Down -> Tear Down Complete
+Tear Down Complete -> Tear Down Complete Complete
 
 Cleaning -> Cleaning Complete
 
