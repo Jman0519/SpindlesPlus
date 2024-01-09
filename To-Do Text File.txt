@@ -36,7 +36,7 @@ Date recieved in the first column - stick with the column order she sent - DONE
 
 Sort by column header addition
 
-Motor portion complete addition?? Motor Complete?
+Motor portion complete addition?? Motor Complete? - DONE
 
 Teardowns always happen - DONE
 
@@ -46,13 +46,13 @@ Tear Down -> Tear Down Complete - DONE
 
 Cleaning -> Cleaning Complete - DONE
 
-Add a Motor Complete Column (Y/N)
+Add a Motor Complete Column (Y/N) - DONE
 
-Parts Recieved (Y/N)
+Parts Recieved (Y/N) - DONE
 
-Build (Y/N)
+Build Complete(Y/N) - Done
 
-Test (Y/N)
+Test complete (Y/N) - DOne
 
 
 
