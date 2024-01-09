@@ -74,8 +74,10 @@
                 }
                 else {
                     console.log("default ascending");
-                    window.headerName = "Received Date";
+                    window.sortByHeaderArgs = ["Received Date"];
                     window.ascending = true;
+                    sortByHeader();
+                    return;
                 }
             }
             else {
