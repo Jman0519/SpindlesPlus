@@ -66,6 +66,7 @@
     <script>
         function sortByHeader() {
             let headerName = window.sortByHeaderArgs[0];
+            console.log("sorting by " + headerName);
             let jobs = JSON.parse(window.localStorage.getItem('jobs'));
             if (window.headerName == headerName) {
                 if (window.ascending) {
@@ -88,10 +89,21 @@
 
             jobs.sort(function (a, b) {
                 if (headerName.includes("Date")) {
+                    let aString = a[headerName];
+                    let bString = b[headerName];
+
                     a = a[headerName].split('-');
                     b = b[headerName].split('-');
                     a = new Date(a[0], a[1] - 1, a[2]);
                     b = new Date(b[0], b[1] - 1, b[2]);
+
+                    if (aString == "") {
+                        a = new Date();
+                    }
+                    if (bString == "") {
+                        b = new Date();
+                    }
+
                     if (a < b) {
                         return window.ascending ? -1 : 1;
                     }
