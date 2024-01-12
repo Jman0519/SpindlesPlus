@@ -22,6 +22,7 @@
             <div class="input-group">
                 <label for="incomingShippingContainer">Container </label>
                 <select id="incomingShippingContainer" placeholder="Container" required>
+                    <option value="" selected>Select an option</option>
                     <option value="C">Crate</option>
                     <option value="S">Skid</option>
                     <option value="CB">Cardboard Box</option>
@@ -39,6 +40,20 @@
                 <input type="text" id="unit" placeholder="Unit" required>
             </div>
             <hr>
+
+            <div class="input-group">
+                <label for="tearDownTech">Tear Down Tech </label>
+                <select id="tearDownTech" placeholder="Tear Down Tech" required>
+                    <option value="" selected>Select an option</option>
+                    <option value="CS">Chuck Spivey</option>
+                    <option value="CS2">Connor Spivey</option>
+                    <option value="GC">Greg Cummins</option>
+                    <option value="GH">Greg Hartman</option>
+                    <option value="DS">Dave Saylor</option>
+                    <option value="DT">Dylan Tanner </option>
+                    <option value="BM">Brett Moles</option>
+                </select>
+            </div>
 
             <div class="input-group">
                 <label for="tearDown">Tear Down Complete? </label>
@@ -61,8 +76,8 @@
             <hr>
 
             <div class="input-group">
-                <label for="cleaning">Cleaning Complete Complete? </label>
-                <select id="cleaning" placeholder="Cleaning Complete Complete?" required>
+                <label for="cleaning">Cleaning Complete? </label>
+                <select id="cleaning" placeholder="Cleaning Complete?" required>
                     <option value="" selected>Select an option</option>
                     <option value="Y">Yes</option>
                     <option value="N">No</option>
@@ -107,6 +122,7 @@
             <div class="input-group">
                 <label for="motorRequirement">Motor Requirement </label>
                 <select id="motorRequirement" placeholder="Motor Requirement" required>
+                    <option value="" selected>Select an option</option>
                     <option value="CB">Clean / Bake</option>
                     <option value="RE">Rewind / Epoxy</option>
                 </select>
@@ -116,11 +132,21 @@
                 <label for="motorInfo">Motor Info </label>
                 <input type="text" id="motorInfo" placeholder="Motor Info" required>
             </div>
+
+            <div class="input-group">
+                <label for="motorComplete">Motor Complete? </label>
+                <select id="motorComplete" placeholder="Motor Complete" required>
+                    <option value="" selected>Select an option</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
             <hr>
 
             <div class="input-group">
                 <label for="partsRequired">Parts Required </label>
                 <select id="partsRequired" placeholder="Parts Required?" required>
+                    <option value="" selected>Select an option</option>
                     <option value="SPI">Spindles Plus Parts</option>
                     <option value="Customer">Customer Supplied Parts</option>
                     <option value="Other">Other</option>
@@ -134,13 +160,44 @@
             </div>
 
             <div class="input-group">
-                <label for="partBuild">Build Info </label>
-                <input type="text" id="partBuild" placeholder="Build Info" required>
+                <label for="partsArrived">Parts Arrived? </label>
+                <select id="partsArrived" placeholder="Parts Arrived?" required>
+                    <option value="" selected>Select an option</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
             </div>
 
             <div class="input-group">
-                <label for="partTest">Test Info </label>
-                <textarea id="partTest" placeholder="Test Info" required></textarea>
+                <label for="buildTech">Build Tech </label>
+                <select id="buildTech" placeholder="Build Tech" required>
+                    <option value="" selected>Select an option</option>
+                    <option value="CS">Chuck Spivey</option>
+                    <option value="CS2">Connor Spivey</option>
+                    <option value="GC">Greg Cummins</option>
+                    <option value="GH">Greg Hartman</option>
+                    <option value="DS">Dave Saylor</option>
+                    <option value="DT">Dylan Tanner </option>
+                    <option value="BM">Brett Moles</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="partBuild">Build Complete? </label>
+                <select id="partBuild" placeholder="Build Complete?" required>
+                    <option value="" selected>Select an option</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="partTest">Test Complete? </label>
+                <select id="partTest" placeholder="Test Complete?" required>
+                    <option value="" selected>Select an option</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
             </div>
             <hr>
 
@@ -215,6 +272,7 @@
                 document.getElementById("incomingShippingContainer").value = job["Container"];
                 document.getElementById("receivedDate").value = job["Received Date"];
                 document.getElementById("unit").value = job["Unit"];
+                document.getElementById("tearDownTech").value = job["Tear Down Tech"];
                 document.getElementById("tearDown").value = job["Tear Down Complete"];
                 document.getElementById("quotedDate").value = job["Quoted Date"];
                 document.getElementById("approvalDate").value = job["Approval Date"];
@@ -225,10 +283,13 @@
                 document.getElementById("grindComplete").value = job["Grind Complete"];
                 document.getElementById("motorRequirement").value = job["Motor Requirement"];
                 document.getElementById("motorInfo").value = job["Motor Info"];
+                document.getElementById("motorComplete").value = job["Motor Complete"];
                 document.getElementById("partsRequired").value = job["Parts Required"];
                 document.getElementById("partsList").value = job["Parts List"];
-                document.getElementById("partBuild").value = job["Build"];
-                document.getElementById("partTest").value = job["Test"];
+                document.getElementById("partsArrived").value = job["Parts Arrived"];
+                document.getElementById("buildTech").value = job["Build Tech"];
+                document.getElementById("partBuild").value = job["Build Complete"];
+                document.getElementById("partTest").value = job["Test Complete"];
                 document.getElementById("estimatedShipDate").value = job["Estimated Ship Date"];
                 document.getElementById("readyToShip").value = job["Ready To Ship"];
 
@@ -242,6 +303,7 @@
                     let incomingShippingContainer = document.getElementById("incomingShippingContainer").value;
                     let receivedDate = document.getElementById("receivedDate").value;
                     let unit = document.getElementById("unit").value;
+                    let tearDownTech = document.getElementById("tearDownTech").value;
                     let tearDown = document.getElementById("tearDown").value;
                     let quotedDate = document.getElementById("quotedDate").value;
                     let approvalDate = document.getElementById("approvalDate").value;
@@ -252,8 +314,11 @@
                     let grindComplete = document.getElementById("grindComplete").value;
                     let motorRequirement = document.getElementById("motorRequirement").value;
                     let motorInfo = document.getElementById("motorInfo").value;
+                    let motorComplete = document.getElementById("motorComplete").value;
                     let partsRequired = document.getElementById("partsRequired").value;
                     let partsList = document.getElementById("partsList").value;
+                    let partsArrived = document.getElementById("partsArrived").value;
+                    let buildTech = document.getElementById("buildTech").value;
                     let partBuild = document.getElementById("partBuild").value;
                     let partTest = document.getElementById("partTest").value;
                     let estimatedShipDate = document.getElementById("estimatedShipDate").value;
@@ -264,6 +329,7 @@
                         "Container": incomingShippingContainer,
                         "Received Date": receivedDate,
                         "Unit": unit,
+                        "Tear Down Tech": tearDownTech,
                         "Tear Down Complete": tearDown,
                         "Quoted Date": quotedDate,
                         "Approval Date": approvalDate,
@@ -274,10 +340,13 @@
                         "Grind Complete": grindComplete,
                         "Motor Requirement": motorRequirement,
                         "Motor Info": motorInfo,
+                        "Motor Complete": motorComplete,
                         "Parts Required": partsRequired,
                         "Parts List": partsList,
-                        "Build": partBuild,
-                        "Test": partTest,
+                        "Parts Arrived": partsArrived,
+                        "Build Tech": buildTech,
+                        "Build Complete": partBuild,
+                        "Test Complete": partTest,
                         "Estimated Ship Date": estimatedShipDate,
                         "Ready To Ship": readyToShip,
                         "uuid": job["uuid"]

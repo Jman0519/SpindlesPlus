@@ -17,7 +17,7 @@ figure out the chrome grind jig hierarchy
 
 oreient all dates so they are  01/05/24 format
 
-Tear Down Complete yes or no
+Tear Down yes or no
 
 cleaning yes or no
 
@@ -32,29 +32,27 @@ header bar shows what job they are editing/deleting/closing
 
 demo on Jan 7th 2024
 
-Date recieved in the first column - stick with the column order she sent
-
-Conner first 4 things - Jenifer will enter some stuff
+Date recieved in the first column - stick with the column order she sent - DONE
 
 Sort by column header addition
 
-Motor portion complete addition?? Motor Complete?
+Motor portion complete addition?? Motor Complete? - DONE
 
-Teardowns always happen
+Teardowns always happen - DONE
 
-Y with green background - N with red background
+Y with green background - N with red background - DONE
 
-Tear Down Complete -> Tear Down Complete Complete
+Tear Down -> Tear Down Complete - DONE
 
-Cleaning -> Cleaning Complete
+Cleaning -> Cleaning Complete - DONE
 
-Add a Motor Complete Column (Y/N)
+Add a Motor Complete Column (Y/N) - DONE
 
-Parts Recieved (Y/N)
+Parts Recieved (Y/N) - DONE
 
-Build (Y/N)
+Build Complete(Y/N) - Done
 
-Test (Y/N)
+Test complete (Y/N) - DOne
 
 
 
