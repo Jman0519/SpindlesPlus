@@ -34,7 +34,9 @@
     <script>
         document.getElementById("submitButton").addEventListener("click", function () {
             var password = document.getElementById("password").value;
-            document.cookie = '{"password": "' + password + '"}';
+            document.cookie = "";
+            document.cookie = 'password=' + password;
+            window.onbefore
             window.location.href = "JobBoard.html";
         });
     </script>

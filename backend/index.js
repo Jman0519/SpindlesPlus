@@ -44,12 +44,17 @@ server.on('request', async (req, res) => {
 
     let cookie = {};
     try {
-        cookie = JSON.parse(req.headers.cookie);
+        let cookieString = req.headers.cookie;
+        let cookieArray = cookieString.split('; ');
+        for (let i = 0; i < cookieArray.length; i++) {
+            let cookiePair = cookieArray[i].split('=');
+            cookie[cookiePair[0]] = cookiePair[1];
+        }
     }
     catch (err) {
     }
 
-    console.log("cookie", cookie);
+    console.log("cookie", req.headers.cookie);
 
     // things that need no login
     if (url == "/style.css") {
