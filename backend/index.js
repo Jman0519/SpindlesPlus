@@ -41,6 +41,42 @@ server.on('request', async (req, res) => {
     let url = req.url;
     console.log(url);
     console.log("url", url);
+
+    let cookie = {};
+    try {
+        cookie = JSON.parse(req.headers.cookie);
+    }
+    catch (err) {
+    }
+
+    console.log("cookie", cookie);
+
+    // things that need no login
+    if (url == "/style.css") {
+        res.writeHead(200, { 'Content-Type': 'text/css' });
+        res.end(fs.readFileSync('frontend/style.css'));
+        return;
+    }
+    else if (url == "/favicon.ico") {
+        res.writeHead(200, { 'Content-Type': 'image/x-icon' });
+        res.end(fs.readFileSync('images/favicon.ico'));
+        return;
+    }
+    else if (url == "/spindles_plus_image.gif") {
+        res.writeHead(200, { 'Content-Type': 'image/gif' });
+        res.end(fs.readFileSync('images/spindles_plus_image.gif'));
+        return;
+    }
+
+    // check for password
+    if (cookie.password != "spi45103pi") {
+        res.writeHead(401, { 'Content-Type': 'text/html' });
+        res.end(fs.readFileSync("frontend/Login.html"));
+        console.log("sending them to the login page");
+        return;
+    }
+
+    // things that need login
     if (url == "/") {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(fs.readFileSync('frontend/JobBoard.html'));
@@ -80,18 +116,6 @@ server.on('request', async (req, res) => {
     else if (url == "/About.html") {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end(fs.readFileSync('frontend/About.html'));
-    }
-    else if (url == "/style.css") {
-        res.writeHead(200, { 'Content-Type': 'text/css' });
-        res.end(fs.readFileSync('frontend/style.css'));
-    }
-    else if (url == "/favicon.ico") {
-        res.writeHead(200, { 'Content-Type': 'image/x-icon' });
-        res.end(fs.readFileSync('images/favicon.ico'));
-    }
-    else if (url == "/spindles_plus_image.gif") {
-        res.writeHead(200, { 'Content-Type': 'image/gif' });
-        res.end(fs.readFileSync('images/spindles_plus_image.gif'));
     }
 
     else if (url == "/addJob") {
