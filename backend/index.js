@@ -74,7 +74,7 @@ server.on('request', async (req, res) => {
     }
 
     // check for password
-    if (cookie.password != "spi45103pi") {
+    if (cookie.password != fs.readFileSync("./backend/password.txt").toString()) {
         res.writeHead(401, { 'Content-Type': 'text/html' });
         res.end(fs.readFileSync("frontend/Login.html"));
         console.log("sending them to the login page");
